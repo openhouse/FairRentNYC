@@ -1,1 +1,10 @@
+<div class="box-shadow-1dp--filter">
+  <div class="slideshow "></div>
+</div>
+<div class="map">
+  <LeafletMap @lat={{lat}} @lng={{lng}} @zoom={{zoom}} as |layers|>
+    <layers.tile @url="/s/slideshow/tiles/{z}/{x}/{y}.png"/>
+  </LeafletMap>
+</div>
+
 {{yield}}

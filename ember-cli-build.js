@@ -10,8 +10,22 @@ module.exports = function (defaults) {
       importBootstrapCSS: false,
     },
     fingerprint: {
-      //exclude: ['public/s/graphics/talks-not-raids-preview.jpg'],
+      exclude: [
+        'images/layers-2x.png',
+        'images/layers.png',
+        'images/marker-icon-2x.png',
+        'images/marker-icon.png',
+        'images/marker-shadow.png',
+        //'public/s/graphics/talks-not-raids-preview.jpg'
+      ],
     },
+    autoprefixer: {
+      browsers: [
+        'defaults',
+        'last 1 ie version',
+      ],
+    },
+
   });
 
   // Use `app.import` to add additional libraries to the generated
