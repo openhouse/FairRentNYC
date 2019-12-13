@@ -1,25 +1,36 @@
 .slideshow {
   width: 100%;
-  height: 61.803398874985468vw;
+  height: 80.92vw;
   background-image: url('/s/slideshow/dev/49200346443_950c4feb59_o.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 91.27%, 55.83% 91.27%, 50% 100%, 44.17% 91.27%, 0 91.27%);
-  // clip-path: polygon(0% 0%, 100% 0%, 100% 82.54%, 55.83% 82.54%, 50% 100%, 44.17% 82.54%, 0 82.54%);
+  // clip-path: polygon(0% 0%, 100% 0%, 100% 91.27%, 55.83% 91.27%, 50% 100%, 44.17% 91.27%, 0 91.27%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 76.42%, 69% 76.42%, 50% 100%, 31% 76.42%, 0 76.42%);
 
   z-index: 1000;
   position: relative;
-}
+  filter: blur(0px);
+  transition: filter ease-out 75ms;
 
-.leaflet-container {
-  width: 100%;
-  height: 38.196601125014532vw;
-  position: relative;
-  top: -6vw;
-  z-index: -1;
-  background-color: #4ea3ea;
+  &:hover {
+    transition: filter ease-in 150ms;
+    filter: blur(2px);
+  }
+
 }
-.leaflet-control-container {
-  display: none;
+.map {
+
 }
+  .leaflet-container {
+    width: 100%;
+    height: 38.17vw;
+    position: relative;
+    top: -19.08vw;
+    z-index: -1;
+    background-color: #4ea3ea;
+    box-shadow: $box-shadow-1dp;
+  }
+  .leaflet-control-container {
+    display: none;
+  }
