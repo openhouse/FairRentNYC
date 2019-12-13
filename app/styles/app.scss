@@ -154,9 +154,9 @@ $gray-900: map-get($oil-pastels, 'black');
 $body-bg: map-get($oil-pastels, 'white');
 $body-bg: white;
 
-$body-color: map-get($oil-pastels, 'black');
+// $body-color: map-get($oil-pastels, 'black');
 // $body-color: white;
-// $body-color: black;
+$body-color: black;
 
 $primary:       $pink !default;
 // $primary:       #94d9d5;
@@ -417,6 +417,10 @@ dt {
 }
 .jb-ml-05 {
   margin-left: 0.309016994374927em !important;
+}
+
+.line-height {
+  line-height: 0.8773584906em;
 }
 
 @import "ember-bootstrap/bootstrap";
