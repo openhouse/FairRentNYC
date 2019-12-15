@@ -12,9 +12,9 @@ $totalHeight: 375px;
     }
 
     height: $totalHeight/$golden-ratio + ($totalHeight - $totalHeight/$golden-ratio)/2;
-    background-color: black;
+    background-color: #5a5658;
     // background-image: url('/s/slideshow/dev/49200346443_950c4feb59_o.jpg');
-    background-image: url('/s/slideshow/dev/49202084717_dcc309afd7_o.jpg');
+    // background-image: url('/s/slideshow/dev/49202084717_dcc309afd7_o.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% (100%-(1/$golden-ratio)*100)*(1/$golden-ratio);
@@ -53,34 +53,60 @@ $totalHeight: 375px;
         width: 100% - 100%/$golden-ratio;
 
     }
-
-  .map {
-    height: ($totalHeight - $totalHeight/$golden-ratio)/2;
-    overflow: visible;
-  }
-    .leaflet-container {
-      @media (min-width: 576px) {
-        border-radius: 0 0 0.25rem 0.25rem;
-      }
-
-      height: $totalHeight - $totalHeight/$golden-ratio;
-      top: -1 * ($totalHeight - $totalHeight/$golden-ratio)/2;
-      width: 100%;
-      position: relative;
-      z-index: -1;
-      background-color: #4ea3ea;
+  .map-and-info {
+    @media (min-width: 576px) {
+      border-radius: 0 0 0.25rem 0.25rem;
       box-shadow: $box-shadow-1dp;
     }
-    .leaflet-control-container {
-      display: none;
+  }
+
+    .map {
+      height: ($totalHeight - $totalHeight/$golden-ratio)/2;
+      overflow: visible;
+    }
+      .leaflet-container {
+        height: $totalHeight - $totalHeight/$golden-ratio;
+        top: -1 * ($totalHeight - $totalHeight/$golden-ratio)/2;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        background-color: #4ea3ea;
+        box-shadow: $box-shadow-1dp;
+
+        @media (min-width: 576px) {
+          box-shadow: none;
+        }
+
+      }
+      .leaflet-control-container {
+        display: none;
+      }
+
+  .map-caption {
+    .white-box {
+      background-color: rgba(255, 255, 255, 1/$golden-ratio);
+      position: relative;
+      top: -6.35rem;
+      border-radius: 0.25rem;
+    }
+  }
+
+  .district-info {
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    box-shadow: $box-shadow-1dp;
+
+    @media (min-width: 576px) {
+      margin: 0;
+      box-shadow: none;
     }
 
-
-.map-caption {
-  .white-box {
-    background-color: rgba(255, 255, 255, 1/$golden-ratio);
-    position: relative;
-    top: -6.35rem;
-    border-radius: 0.25rem;
+    border-radius: 0 0 0.25rem 0.25rem;
   }
-}
+
+    .profile-image--sm {
+      height: 4rem;
+      width: 4rem;
+      background-size: cover;
+
+    }
