@@ -1,14 +1,22 @@
 <div class="container">
   <div class="box-shadow-1dp--filter">
-    <div class="slideshow "></div>
+    <div class="slideshow ">
+      <div class="slideshow-caption light-narrow-font line-height all-caps">
+        <b>"</b>Speculative landlords are just thinking about numbers on a page, not relationships or community.<b>"</b>
+      </div>
+    </div>
   </div>
   <div class="map">
     <LeafletMap @lat={{lat}} @lng={{lng}} @zoom={{zoom}} as |layers|>
       <layers.tile @url="/s/slideshow/tiles/{z}/{x}/{y}.png"/>
     </LeafletMap>
-  </div>
-  <div class="map-caption text-center strong-font all-caps">
-    > 15,000 Shuttered NYC Storefronts
+
+    <div class="map-caption text-center strong-font all-caps">
+      <span class="white-box pr-2 pl-2">
+        + 15,000 Shuttered NYC Storefronts
+      </span>
+    </div>
+
   </div>
 </div>
 {{yield}}

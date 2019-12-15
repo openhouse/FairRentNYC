@@ -1,13 +1,53 @@
 & {
+}
+
+.layer-stack {
   background-color: white;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.236067977499799), rgba(255, 255, 255, 0.618033988749855)),
-    url('/s/img/fairrentnyc-cover-04.jpg');
+                    url('/s/img/fairrentnyc-cover-04.jpg');
+  @media (min-width: 576px) {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.236067977499799), rgba(255, 255, 255, 1)),
+                      url('/s/img/fairrentnyc-cover-04.jpg');
+  }
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 100%-(1/$golden-ratio)*100;
-  box-shadow: $box-shadow-1dp;
-}
+  // box-shadow: $box-shadow-2dp;
+  position: relative;
+  z-index: 1000;
+  .lead {
+    // letter-spacing: -0.35px;
+    letter-spacing: -1px;
+    height: 1.75rem;
+    overflow: hidden;
+    padding-bottom: 0.5rem;
+    /*
+    // cooky one-line justify
+    text-align: justify;
+    text-align-last: justify;
+    text-justify: inter-character;
+    height: 1rem;
+    line-height: 1;
+    &:after{
+       content: "";
+       display: inline-block;
+       width: 100%;
+    }
+    */
+    @media (min-width: 576px) {
+      /// letter-spacing: 0px;
+      letter-spacing: -0.41px;
+      text-align: left;
+    }
 
+    @media (min-width: 768px) {
+      letter-spacing: 0px;
+    }
+
+
+  }
+}
 .action-buttons {
   position: absolute;
   font-size: $h5-font-size;
@@ -22,14 +62,22 @@
   }
   @media (min-width: 768px) {
     width: 720px;
-
   }
   @media (min-width: 992px) {
     width: 960px;
-
   }
   @media (min-width: 1200px) {
     width: 1140px;
-
   }
+}
+
+.scroll-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: $box-shadow-2dp;
+}
+a.black-text {
+  color: black;
 }

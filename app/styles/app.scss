@@ -64,6 +64,18 @@ $identity-color-light: #d3edf7;
       url('/s/fonts/TradeGothic-BoldCondTwenty.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: headline-narrow-light;
+  src: url('/s/fonts/trade-gothic-condensed.ttf') format('truetype');
+}
+@font-face {
+  font-family: headline-light;
+  src: url('/s/fonts/Trade-Gothic-LT.ttf') format('truetype');
+}
+
+
+
+
 
 /*
   BOOSTRAP OVERRIDES
@@ -87,10 +99,16 @@ $NAC-bold-font-family: Geometric-Bold;
 $book-font-family: round-book;
 $strong-font-family: headline, "Trebuchet MS", Helvetica, sans-serif;
 $strong-narrow-font-family: headline-narrow, "Trebuchet MS", Helvetica, sans-serif;
+$light-narrow-font-family: headline-narrow-light, "Trebuchet MS", Helvetica, sans-serif;
+$light-font-family: headline-light, "Trebuchet MS", Helvetica, sans-serif;
+
 $font-family-sans-serif: $book-font-family;
 $primary-font-family: round-book;
 $brand-font-family-black: $strong-font-family;
 $primary-font-family-bold: $strong-font-family;
+
+
+
 
 .btn-primary, .btn.btn-primary {
   // font-family: $primary-font-family-bold;
@@ -122,6 +140,20 @@ $primary-font-family-bold: $strong-font-family;
   font-family: $strong-narrow-font-family;
   font-weight: 900 !important;
 }
+.light-narrow-font {
+  font-family: $light-narrow-font-family;
+  font-weight: 100 !important;
+}
+.light-font {
+  font-family: $light-font-family;
+  font-weight: 100 !important;
+}
+
+
+
+
+
+
 
 b {
   font-family: $strong-font-family;
