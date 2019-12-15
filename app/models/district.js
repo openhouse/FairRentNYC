@@ -32,4 +32,13 @@ export default Model.extend({
   name: computed('firstName', 'lastName', function () {
     return `${this.get('firstName')} ${this.get('lastName')}`;
   }),
+
+  tweetText: computed('twitterHandle', function () {
+    return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable neighborhoods @NYCCouncil @NYCArtC`;
+  }),
+
+  tweetUrl: computed('tweetText', function () {
+    return `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.get('tweetText'))}&url=https://FairRentNYC.com&hashtags=FairRentNYC,StopDisplacement`;
+  }),
+
 });
