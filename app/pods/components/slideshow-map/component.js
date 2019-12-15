@@ -1,19 +1,19 @@
 import Component from '@ember/component';
 import EmberObject, { computed } from '@ember/object';
+import { sort } from '@ember/object/computed';
 
 export default Component.extend({
-  /*
-  lat: 40.6811437,
-  lng: -73.9741527,
-  */
+  // PROPERTIES
   photos: null,
   districts: null,
-
-  lat: 40.81352403,
-  lng: -73.94097228,
   zoom: 12,
-  photo: computed('photos.@each', function () {
-    return this.get('photos.firstObject');
+
+  // COMPUTED PROPERTIES
+  scoreSorting: ['score'],
+  scoredPhotos: sort('photos', 'scoreSorting'),
+
+  photo: computed('scoredPhotos.@each', function () {
+    return this.get('scoredPhotos.firstObject');
   }),
 
   district: computed('districts.@each', function () {

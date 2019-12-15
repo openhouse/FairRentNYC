@@ -81,6 +81,8 @@ export default Route.extend({
             y: photo.y,
             photoUrl: photo.photoUrl,
             photoUrlAllForLocation: photo.photoUrlAllForLocation,
+            overallPhotoRank: photo.overallPhotoRank,
+            normalizedPhotoRank: photo.normalizedPhotoRank,
             display: photo.display,
             photoLocationRankInDistrict: photo.photoLocationRankInDistrict,
             photoQualityRankingInDistrict: photo.photoQualityRankingInDistrict,
@@ -103,7 +105,7 @@ export default Route.extend({
         };
         data.push(dataItem);
       });
-      console.log(data);
+
       store.push({
         data: data,
       });

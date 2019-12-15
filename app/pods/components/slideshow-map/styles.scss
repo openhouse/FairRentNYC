@@ -22,6 +22,7 @@ $totalHeight: 375px;
 
     z-index: 1000;
     position: relative;
+    /*
     filter: blur(0px);
     transition: filter ease-out 75ms;
 
@@ -29,6 +30,7 @@ $totalHeight: 375px;
       transition: filter ease-in 150ms;
       filter: blur(2px);
     }
+    */
   }
     .slideshow-caption{
       @media (min-width: 576px) {

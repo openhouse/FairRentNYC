@@ -13,6 +13,7 @@ export default Model.extend({
   photoUrl: attr(),
   photoUrlAllForLocation: attr(),
   overallPhotoRank: attr(),
+  normalizedPhotoRank: attr(),
   display: attr(),
   photoLocationRankInDistrict: attr(),
   photoQualityRankingInDistrict: attr(),
@@ -27,5 +28,12 @@ export default Model.extend({
   district: belongsTo('district'),
 
   // COMPUTED PROPERTIES
+  score: computed('districtPriority', 'overallPhotoRank', function () {
+    let priority = this.get('districtPriority') / 51;
+    let photoRank = this.get('normalizedPhotoRank');
+    console.log(priority, photoRank);
+
+    return Math.pow((Math.pow(priority, 2) + Math.pow(photoRank, 2)), 0.5);
+  }),
 
 });
