@@ -1,5 +1,10 @@
 <HeadingCover />
-<SlideshowMap @districts={{model.districts}} @photos={{model.photos}} />
+<SlideshowMap @photos={{model.photos}} />
 <br>
+{{!--
+{{#each model.districts as |district|}}
+  {{district.id}}: {{district.photos.length}}<br>
+{{/each}}
+--}}
 
 {{outlet}}

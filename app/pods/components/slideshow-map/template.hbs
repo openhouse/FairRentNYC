@@ -17,9 +17,18 @@
   </div>
   <div class="map-and-info">
     <div class="map">
-      <LeafletMap @lng={{photo.x}} @lat={{photo.y}} @zoom={{zoom}} as |layers|>
+      {{#leaflet-map
+        lng=scoredPhotos.firstObject.x
+        lat=scoredPhotos.firstObject.y
+        zoom=zoom
+        minZoom=zoom
+        maxZoom=zoom
+        scrollWheelZoom=false
+        zoomControl=false
+        onLoad=(action "initMap")
+        as |layers|}}
         <layers.tile @url="/s/slideshow/tiles/{z}/{x}/{y}.png"/>
-      </LeafletMap>
+      {{/leaflet-map}}
 
       <div class="map-caption text-center strong-font all-caps">
         <span class="white-box pr-2 pl-2">
@@ -32,7 +41,7 @@
       <div class="d-flex flex-row align-items-start">
         <div
           class="rounded-circle profile-image--sm"
-          style="background-image: url({{photo.district.photoUrl}})"></div>
+          style="background-image: url({{photo.district.remotePhotoUrl}})"></div>
         <div class="pl-2 flex-grow-1">
           <small><b class="all-caps">City Council Member: District {{photo.district.districtNumber}}</b></small>
           <div class="line-height">Ask {{photo.district.name}}</div>
@@ -47,5 +56,9 @@
 
     </div>
   </div>
+</div>
+<div class="d-none">
+  <img src={{nextPhoto.sizes.[9].source}}>
+  <img src={{nextPhoto.district.remotePhotoUrl}}>
 </div>
 {{yield}}

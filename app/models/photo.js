@@ -31,8 +31,6 @@ export default Model.extend({
   score: computed('districtPriority', 'overallPhotoRank', function () {
     let priority = this.get('districtPriority') / 51;
     let photoRank = this.get('normalizedPhotoRank');
-    console.log(priority, photoRank);
-
     return Math.pow((Math.pow(priority, 2) + Math.pow(photoRank, 2)), 0.5);
   }),
 
