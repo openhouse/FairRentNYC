@@ -1,0 +1,156 @@
+$totalHeight: 375px;
+& {
+  width: 100%;
+  &>.container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+  .slideshow {
+    @media (min-width: 576px) {
+      border-radius: 0.25rem 0.25rem 0 0;
+    }
+
+    height: $totalHeight/$golden-ratio + ($totalHeight - $totalHeight/$golden-ratio)/2;
+    background-color: #5a5658;
+    // background-image: url('/s/slideshow/dev/49200346443_950c4feb59_o.jpg');
+    // background-image: url('/s/slideshow/dev/49202084717_dcc309afd7_o.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% (100%-(1/$golden-ratio)*100)*(1/$golden-ratio);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 76.42%, 69% 76.42%, 50% 100%, 31% 76.42%, 0 76.42%);
+
+    z-index: 1000;
+    position: relative;
+    /*
+    filter: blur(0px);
+    transition: filter ease-out 75ms;
+
+    &:hover {
+      transition: filter ease-in 150ms;
+      filter: blur(2px);
+    }
+    */
+  }
+    .slideshow-caption{
+      @media (min-width: 576px) {
+        border-radius: 0.25rem 0 0 0;
+      }
+
+      text-shadow: $text-shadow-1dp--dark;
+      padding: 0 1rem;
+      font-weight: lighter !important;
+      // color: rgba(255, 255, 255, 1 - (1 - 1/$golden-ratio)/$golden-ratio );
+      // color: rgba(255, 255, 255, 1/$golden-ratio );
+      //color: rgba(158, 158, 158 );
+      // color: rgba(255, 255, 255, 0.809016994374928 );
+      // color: rgba(255, 255, 255, 0.763932022500201 );
+      color: rgba(255, 255, 255, 0.690983005625028);
+
+
+
+      /*
+      padding-top: 10px;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.618033988749855), rgba(0, 0, 0, 0));
+
+      // @media (min-width: 576px) {
+      // }
+      */
+
+        padding-top: 1rem;
+        // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.381966011250145), rgba(0, 0, 0, 0));
+        height: 100%;
+        width: 100% - 100%/$golden-ratio;
+      .location{
+        font-family: $strong-narrow-font-family
+      }
+    }
+  .map-and-info {
+    @media (min-width: 576px) {
+      border-radius: 0 0 0.25rem 0.25rem;
+      box-shadow: $box-shadow-1dp;
+    }
+  }
+
+    .map {
+      height: ($totalHeight - $totalHeight/$golden-ratio)/2;
+      overflow: visible;
+    }
+      .leaflet-container {
+        height: $totalHeight - $totalHeight/$golden-ratio;
+        top: -1 * ($totalHeight - $totalHeight/$golden-ratio)/2;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        background-color: #4ea3ea;
+        box-shadow: $box-shadow-1dp;
+
+        @media (min-width: 576px) {
+          box-shadow: none;
+        }
+
+      }
+      .leaflet-control-container {
+        display: none;
+      }
+
+  .map-caption {
+    .white-box {
+      background-color: rgba(255, 255, 255, 1/$golden-ratio);
+      position: relative;
+      top: -6.35rem;
+      border-radius: 0.25rem;
+    }
+  }
+
+  .district-info {
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    box-shadow: $box-shadow-1dp;
+
+    @media (min-width: 576px) {
+      margin: 0;
+      box-shadow: none;
+    }
+
+    border-radius: 0 0 0.25rem 0.25rem;
+  }
+
+    .profile-image--sm {
+      height: 4rem;
+      width: 4rem;
+      background-size: cover;
+    }
+
+
+
+.sponsor {
+  .profile-image--sm {
+    border: 3px solid #ffb101;
+    height: 4rem;
+  }
+  .label {
+    font-family: $strong-narrow-font-family;
+    background-color: #ffb101;
+    color: white;
+    // background-color: rgba(255, 177, 1, 0.68);
+    // padding-left: 5px;
+    // padding-right: 5px;
+    border-radius: 0.25rem;
+    position: relative;
+    top: 3rem;
+    left: -3px;
+    width: 4rem;
+    height: 1rem;
+    line-height: 1.25rem;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+}
+.gradient-l-50 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.618033988749855), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(to bottom right, rgba(0, 0, 0, 0.381966011250145), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem 0.25rem 0 0;
+}

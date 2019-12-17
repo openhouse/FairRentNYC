@@ -22,6 +22,14 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    fastboot: {
+      hostWhitelist: [
+        'fairrentnyc.com',
+        'fairrentnyc.nycartc.com',
+        '192.168.0.7:4200',
+        /^localhost:\d+$/,],
+    },
+
   };
 
   if (environment === 'development') {
