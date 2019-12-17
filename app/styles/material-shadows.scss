@@ -31,7 +31,7 @@ $box-shadow-24dp: 0px 11px 15px -7px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0
 .box-shadow-2dp { box-shadow: $box-shadow-2dp; }
 .box-shadow-3dp { box-shadow: $box-shadow-3dp; }
 
-.box-shadow-1dp--filter { 
+.box-shadow-1dp--filter {
   filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity)) drop-shadow(0px 1px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity)) drop-shadow(0px 2px 1px rgba(0, 0, 0, $shadow-ambient-shadow-opacity));
  }
 
@@ -61,6 +61,9 @@ $text-shadow-22dp: 0px 10px 14px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 2
 $text-shadow-23dp: 0px 11px 14px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 23px 36px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0px 9px 44px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
 $text-shadow-24dp: 0px 11px 15px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 24px 38px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0px 9px 46px rgba(0, 0, 0, $shadow-ambient-shadow-opacity) !default;
 
+$text-shadow-1dp--dark: 0px 1px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 1px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0px 2px 1px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0px 1px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 1px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0px 2px 1px rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+
 .text-shadow-1dp { text-shadow: $text-shadow-1dp; }
 .text-shadow-2dp { text-shadow: $text-shadow-2dp; }
 .text-shadow-3dp { text-shadow: $text-shadow-3dp; }
+.text-shadow-1dp-dark { text-shadow: $text-shadow-1dp--dark;}
