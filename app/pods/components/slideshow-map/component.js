@@ -16,28 +16,34 @@ export default Component.extend({
 
   // COMPUTED PROPERTIES
   scoreSorting: ['score'],
-  scoredPhotos: sort('photos', 'scoreSorting'),
+  scoredPhotosSorted: sort('photos', 'scoreSorting'),
+  scoredPhotos: computed('scoredPhotos.[]', function () {
+    let photos = this.get('scoredPhotosSorted');
+    let shortIndex = Math.floor(photos.get('length') * 0.381966011250145);
 
-  prevPhoto: computed('scoredPhotos.[]', 'currentPhotoIndex', function () {
+    let output = [photos[shortIndex]].concat(photos.slice(0, shortIndex - 1)).concat(photos.slice(shortIndex + 1));
+    console.log(output);
+    return output;
+  }),
+
+  prevPhoto: computed('scoredPhotos.[]', 'currentPhotoIndex', 'photos.length', function () {
     let photos = this.get('scoredPhotos');
     return photos[(this.get('currentPhotoIndex') - 1) % photos.length];
   }),
 
-  photo: computed('scoredPhotos.[]', 'currentPhotoIndex', function () {
+  photo: computed('scoredPhotos.[]', 'currentPhotoIndex', 'photos.length', function () {
     let photos = this.get('scoredPhotos');
     return photos[this.get('currentPhotoIndex') % photos.length];
   }),
 
-  nextPhoto: computed('scoredPhotos.[]', 'currentPhotoIndex', function () {
+  nextPhoto: computed('scoredPhotos.[]', 'currentPhotoIndex', 'photos.length', function () {
     let photos = this.get('scoredPhotos');
     return photos[(this.get('currentPhotoIndex') + 1) % photos.length];
   }),
 
-  cPI: 0,
-  secondsFromTick: 0,
+  secondsFromTick: 6,
 
   moveMap: observer('photo.id', function () {
-    console.log('moveMap', this.get('photo.id'));
     let map = this.get('map');
     let zoom = this.get('zoom');
     let transitionSeconds = this.get('transitionSeconds');
@@ -48,6 +54,8 @@ export default Component.extend({
     });
   }),
 
+  cPI: -1,
+  imagesShown: 0,
   currentPhotoIndex: computed('clock.time', 'displaySeconds', 'transitionSeconds', function () {
     let clockTime = this.get('clock.time');
     let display = this.get('displaySeconds');
@@ -56,6 +64,11 @@ export default Component.extend({
     let secondsFromTick = this.get('secondsFromTick');
     let cPI = this.get('cPI');
     secondsFromTick++;
+    if (this.get('imagesShown') < 2) {
+      secondsFromTick = cycleLength;
+      this.set('imagesShown', this.get('imagesShown') + 1);
+    }
+
     if (secondsFromTick >= cycleLength) {
       secondsFromTick = 0;
       cPI++;
@@ -64,8 +77,14 @@ export default Component.extend({
 
     this.set('secondsFromTick', secondsFromTick);
     if (secondsFromTick === 0) {
+      if (cPI < 0) {
+        return 0;
+      }
+
       return cPI;
     }
+    // return cPI;
+
   }),
 
   actions: {

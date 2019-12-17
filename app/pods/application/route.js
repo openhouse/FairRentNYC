@@ -92,6 +92,8 @@ export default Route.extend({
             flickrId: photo.flickrId,
             sizes: photo.sizes,
             quote: photo.quote,
+            borough: photo.borough,
+            neighborhood: photo.neighborhood,
           },
           relationships: {
             district: {

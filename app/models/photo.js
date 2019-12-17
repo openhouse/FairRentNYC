@@ -5,7 +5,6 @@ const { Model, attr, belongsTo } = DS;
 export default Model.extend({
   // ATTRIBUTES
   vacantSpaceId: attr(),
-  district: attr(),
   districtPriority: attr(),
   address: attr(),
   x: attr(),
@@ -23,6 +22,8 @@ export default Model.extend({
   flickrId: attr(),
   sizes: attr(),
   quote: attr(),
+  borough: attr(),
+  neighborhood: attr(),
 
   // RELATIONSHIPS
   district: belongsTo('district'),
