@@ -94,6 +94,7 @@ export default Route.extend({
             quote: photo.quote,
             borough: photo.borough,
             neighborhood: photo.neighborhood,
+            cssY: photo.cssY,
           },
           relationships: {
             district: {

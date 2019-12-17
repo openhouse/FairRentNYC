@@ -2,7 +2,10 @@
   <div class="box-shadow-1dp--filter">
     <div
       class="slideshow"
-      style="background-image: url({{photo.sizes.[9].source}});"
+      style="
+        background-image: url({{photo.sizes.[9].source}});
+        background-position: 50% {{photo.cssY}}%;
+      "
       >
       <div class="gradient-l-50">
         <div class="gradient-t-1">

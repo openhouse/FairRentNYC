@@ -24,6 +24,7 @@ export default Model.extend({
   quote: attr(),
   borough: attr(),
   neighborhood: attr(),
+  cssY: attr(),
 
   // RELATIONSHIPS
   district: belongsTo('district'),
