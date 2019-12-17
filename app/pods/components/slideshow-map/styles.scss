@@ -40,7 +40,7 @@ $totalHeight: 375px;
       text-shadow: $text-shadow-1dp--dark;
       padding: 0 1rem;
       font-weight: lighter !important;
-      color: rgba(255, 255, 255, 1 - (1 - 1/$golden-ratio)/$golden-ratio );
+      // color: rgba(255, 255, 255, 1 - (1 - 1/$golden-ratio)/$golden-ratio );
       // color: rgba(255, 255, 255, 1/$golden-ratio );
       //color: rgba(158, 158, 158 );
       // color: rgba(255, 255, 255, 0.809016994374928 );
@@ -149,12 +149,8 @@ $totalHeight: 375px;
   }
 }
 .gradient-l-50 {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.618033988749855), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.618033988749855), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(to bottom right, rgba(0, 0, 0, 0.381966011250145), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
   width: 100%;
   height: 100%;
-}
-.gradient-t-1 {
-  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.381966011250145), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-  width: 100%;
-  height: 100%;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
