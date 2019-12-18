@@ -28,6 +28,7 @@ $identity-color-light: #d3edf7;
   src: url('/s/fonts/round-book.otf');
 }
 
+/*
 @font-face {
   font-family: Geometric-Black;
   src: url('/s/fonts/Geometric-Black.eot?') format('eot'),
@@ -48,7 +49,7 @@ $identity-color-light: #d3edf7;
       url('/s/fonts/Geometric-Book.otf') format('opentype'),
       url('/s/fonts/Geometric-Book.ttf') format('truetype');
 }
-
+*/
 @font-face {
   font-family: headline;
   src: url('/s/fonts/TradeGothicLTPro-Bold.eot?') format('eot'),
@@ -94,8 +95,8 @@ $active-font-family:  'Arial Black', 'Arial Bold', Arial-BoldMT, Gadget, sans-se
 */
 
 
-$NAC-font-family: Geometric-Black;
-$NAC-bold-font-family: Geometric-Bold;
+// $NAC-font-family: Geometric-Black;
+// $NAC-bold-font-family: Geometric-Bold;
 $book-font-family: round-book;
 $strong-font-family: headline, "Trebuchet MS", Helvetica, sans-serif;
 $strong-narrow-font-family: headline-narrow, "Trebuchet MS", Helvetica, sans-serif;
@@ -123,12 +124,14 @@ $primary-font-family-bold: $strong-font-family;
     border-color: #fa0163;
   }
 }
+/*
 .NAC-font {
   font-family: $NAC-font-family;
 }
 .NAC-bold-font {
   font-family: $NAC-bold-font-family;
 }
+*/
 .book-font {
   font-family: $book-font-family;
 }
@@ -370,6 +373,10 @@ dt {
 .text-white {
   color: white;
   fill: white;
+}
+.text-black {
+  color: black;
+  fill: black;
 }
 
 .comma-seperated-list{

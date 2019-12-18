@@ -10,11 +10,10 @@
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
       padding-right: 1.25rem;
-      padding-left: 0.25rem;
+      padding-left: 0.5rem;
     }
 
     .item-left {
-      width: 100px !important;
       text-align: center;
       display: flex;
       padding: 0;
@@ -28,11 +27,13 @@
       }
     }
       .item-left-inner {
-        padding-left: 0.75rem;
+        padding-left: 1rem;
         padding-right: 0.75rem;
         text-align: center;
         display: block;
         width: 100%;
+        max-width: 4rem;
+        overflow: visible;
       }
 
       .speech-bg {
