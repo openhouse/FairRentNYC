@@ -1,0 +1,44 @@
+// 0.75rem 1.25rem
+.card {
+  border: 0px;
+}
+  .list-group-item {
+    padding: 0;
+    border: 0;
+  }
+    .item-right {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      padding-right: 1.25rem;
+      padding-left: 0.25rem;
+    }
+
+    .item-left {
+      width: 100px !important;
+      text-align: center;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      flex: 0 0 4rem;
+      vertical-align: middle;
+      align-items: center;
+
+      img {
+        max-width: 100%;
+      }
+    }
+      .item-left-inner {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
+      .speech-bg {
+        background-image: url('/s/chhaya-200s-o.jpg');
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 0 0.25rem 0.25rem 0;
+      }
