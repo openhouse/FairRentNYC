@@ -113,6 +113,7 @@ export default Route.extend({
       store.push({
         data: data,
       });
+
       return {
         photos: store.peekAll('photo'),
         districts: store.peekAll('district'),

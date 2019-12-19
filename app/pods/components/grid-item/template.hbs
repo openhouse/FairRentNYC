@@ -1,0 +1,29 @@
+<a class=classNames href="{{href}}" target="_blank">
+  {{#if fitImage}}
+    {{#if round}}
+      <div
+        class="fit-image round"
+        style="background-image: url('{{src}}')">
+      </div>
+    {{else}}
+      <div
+        class="fit-image"
+        style="background-image: url('{{src}}')">
+      </div>
+    {{/if}}
+  {{else}}
+    <div class="text-center">
+      <img src="{{src}}"/>
+    </div>
+  {{/if}}
+  <div class="name">
+    {{#if hasBlock}}
+      {{yield}}
+    {{else}}
+      <span class="grid-item__name">{{{name}}}</span>
+      {{#if line2}}
+        <br><span class="grid-item__line2">{{{line2}}}</span>
+      {{/if}}
+    {{/if}}
+  </div>
+</a>
