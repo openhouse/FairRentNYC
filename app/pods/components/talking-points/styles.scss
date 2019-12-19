@@ -1,10 +1,63 @@
 // 0.75rem 1.25rem
+.img-background-wrapper {
+  position: relative;
+  z-index: -1;
+  top: -1.5rem;
+  @media (min-width: 992px) {
+    top: -1.5rem;
+  }
+  @media (min-width: 1200px) {
+    top: -2rem;
+  }
+
+}
+  .img-background {
+    background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),
+      url('/s/meeting-1200.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 15rem;
+    width: 100%;
+    position: absolute;
+    opacity: 100% - 100%/$golden-ratio;
+    /*
+    @media (min-width: 576px) {
+      height: 8rem;
+    }
+    */
+    @media (min-width: 576px) {
+      height: 9rem;
+    }
+
+    @media (min-width: 768px) {
+      height: 10rem;
+    }
+
+    @media (min-width: 992px) {
+      height: 10rem;
+    }
+
+    @media (min-width: 1200px) {
+      height: 14rem;
+    }
+
+  }
 .card {
   border: 0px;
+  /*
+  background-image:
+    linear-gradient(to bottom, rgba(252, 249, 75, 1/$golden-ratio), rgba(255, 255, 255, 1/$golden-ratio) 10rem);
+  background-color: transparent;*/
+  background-color: rgba(255, 255, 255, 1/$golden-ratio);
 }
   .list-group-item {
     padding: 0;
     border: 0;
+    background: none;
+
   }
     .item-right {
       padding-top: 0.75rem;
@@ -45,6 +98,8 @@
       }
 
   .card-header{
-    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
     border: 0px;
+    color: black;
+    // text-shadow: $text-shadow-1dp;
   }

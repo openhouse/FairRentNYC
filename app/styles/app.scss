@@ -463,7 +463,7 @@ dt {
 }
 
 .container {
-  max-width: 375px * $golden-ratio !important;
+  max-width: (25rem * $golden-ratio) !important;
 }
 
 .container--wide {

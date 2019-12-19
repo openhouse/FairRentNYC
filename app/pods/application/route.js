@@ -20,6 +20,7 @@ export default Route.extend({
     5,
   ],
   model(params) {
+    let self = this;
     let store = this.get('store');
     let sponsorDistricts = this.get('sponsorDistricts');
     let promises = {
@@ -115,6 +116,7 @@ export default Route.extend({
       return {
         photos: store.peekAll('photo'),
         districts: store.peekAll('district'),
+        sponsorDistricts: self.get('sponsorDistricts'),
       };
 
 

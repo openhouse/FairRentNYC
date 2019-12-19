@@ -1,6 +1,10 @@
+<div class="img-background-wrapper">
+  <div class="img-background">
+  </div>
+</div>
 <div class="container">
   <div class="card ">
-    <div class="card-header strong-font all-caps line-height h3">
+    <div class="card-header strong-font all-caps line-height h2">
       Pass Commercial Rent Stabilization
     </div>
     <ul class="list-group list-group-flush">
@@ -40,7 +44,7 @@
           </div>
         </div>
         <div class="flex-grow-1 item-right">
-          <b>10 City Council Members have signed on</b>.  Get to 26 for the majority.
+          <b>{{sponsorDistricts.length}} City Council Members have signed on</b>.  Get to 26 for the majority.
         </div>
       </li>
       <li class="list-group-item d-flex align-items-center">
@@ -63,22 +67,21 @@
       <div class="d-flex justify-content-between">
         <div class="flex-fill pr-1">
           <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1sx7BJ6DKLxD6SI9usWs-ZDcdgFAgrF_8/view?usp=sharing"
-            class="btn btn-primary w-100 all-caps strong-font text-white flex-fill">
-            {{fa-icon "file" inverse=true}}
-            Read Report
-          </a>
-        </div>
-        <div class="flex-fill pl-1">
-          <a
             href="tel:212-788-7210"
             class="btn btn-primary w-100 all-caps strong-font text-white flex-fill"
             >
             {{fa-icon "phone" inverse=true }}
             Call City Hall
           </a>
-
+        </div>
+        <div class="flex-fill pl-1">
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/1sx7BJ6DKLxD6SI9usWs-ZDcdgFAgrF_8/view?usp=sharing"
+            class="btn btn-outline-primary w-100 all-caps strong-font flex-fill">
+            {{fa-icon "file" }}
+            Read Report
+          </a>
         </div>
       </div>
     </div>

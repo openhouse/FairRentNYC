@@ -4,6 +4,11 @@ $totalHeight: 375px;
   &>.container {
     padding-left: 0;
     padding-right: 0;
+    @media (min-width: 576px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
   }
 }
   .slideshow {
