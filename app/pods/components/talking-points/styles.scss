@@ -2,13 +2,21 @@
 .img-background-wrapper {
   position: relative;
   z-index: -1;
-  top: -1.5rem;
+  top: -2.5rem;
+  @media (min-width: 576px) {
+    top: -3rem;
+  }
+  /*
+  @media (min-width: 768px) {
+    top: -3rem;
+  }
   @media (min-width: 992px) {
-    top: -1.5rem;
+    top: -3rem;
   }
   @media (min-width: 1200px) {
-    top: -2rem;
+    top: -3rem;
   }
+  */
 
 }
   .img-background {
@@ -19,7 +27,7 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 15rem;
+    height: 12.5rem;
     width: 100%;
     position: absolute;
     opacity: 100% - 100%/$golden-ratio;
@@ -29,19 +37,19 @@
     }
     */
     @media (min-width: 576px) {
-      height: 9rem;
+      height: 11.5rem;
     }
-
+    /*
     @media (min-width: 768px) {
-      height: 10rem;
+      height: 11.5rem;
     }
 
     @media (min-width: 992px) {
-      height: 10rem;
+      height: 11.5rem;
     }
-
+    */
     @media (min-width: 1200px) {
-      height: 11rem;
+      height: 12rem;
     }
 
   }

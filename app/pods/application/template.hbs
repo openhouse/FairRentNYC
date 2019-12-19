@@ -3,16 +3,10 @@
 <br>
 <ComptrollerReport />
 <br>
-<TalkingPoints @sponsorDistricts={{model.sponsorDistricts}} />
+<TalkingPoints @sponsorCount={{model.sponsorCount}} />
 <br>
 <EmailList />
 <br>
 <SponsorGrid @districts={{model.districts}} />
-
-{{!--
-{{#each model.districts as |district|}}
-  {{district.id}}: {{district.photos.length}}<br>
-{{/each}}
---}}
-
+<br>
 {{outlet}}
