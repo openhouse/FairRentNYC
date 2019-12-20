@@ -44,10 +44,10 @@ export default Component.extend({
   secondsFromTick: 6,
 
   moveMap: observer('photo.id', function () {
+    let photo = this.get('photo');
     let map = this.get('map');
     let zoom = this.get('zoom');
     let transitionSeconds = this.get('transitionSeconds');
-    let photo = this.get('photo');
     map.flyTo([photo.get('y'), photo.get('x')], zoom, {
       animate: true,
       duration: transitionSeconds,

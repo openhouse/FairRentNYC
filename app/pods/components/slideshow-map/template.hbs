@@ -1,25 +1,26 @@
 <div class="container">
-  <div class="box-shadow-1dp--filter">
-    <div
-      class="slideshow"
-      style="
-        background-image: url({{photo.sizes.[9].source}});
-        background-position: 50% {{photo.cssY}}%;
-      "
-      >
-      <div class="gradient-l-50">
-        <div class="slideshow-caption light-narrow-font line-height all-caps">
-          {{#if photo.quote}}
-            <b>"</b>{{photo.quote}}<b>"</b>
-          {{else}}
-            <b>"</b>Pass Commercial Rent Stabilization<b>"</b>
-          {{/if}}
-          <div class="pt-1 location"><small class="all-caps">{{photo.neighborhood}}, {{photo.borough}}</small></div>
+  <div class="map-and-info">
+
+    <div class="box-shadow-1dp--filter">
+      <div
+        class="slideshow"
+        style="
+          background-image: url({{photo.sizes.[9].source}});
+          background-position: 50% {{photo.cssY}}%;
+        "
+        >
+        <div class="gradient-l-50">
+          <div class="slideshow-caption light-narrow-font line-height all-caps">
+            {{#if photo.quote}}
+              <b>"</b>{{photo.quote}}<b>"</b>
+            {{else}}
+              <b>"</b>Pass Commercial Rent Stabilization<b>"</b>
+            {{/if}}
+            <div class="pt-1 location"><small class="all-caps">{{photo.neighborhood}}, {{photo.borough}}</small></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="map-and-info">
     <div class="map">
       {{#leaflet-map
         lng=scoredPhotos.firstObject.x

@@ -6,7 +6,13 @@
 <TalkingPoints @sponsorCount={{model.sponsorCount}} />
 <br>
 <EmailList />
+<div class="box-shadow-3dp pastel-border pastel-hi-green pt-3 mt-3" style="border-top-width: 1px; border-top-style: solid;">
+  <SponsorGrid @districts={{model.districts}} />
+  <br>
+  <ProgressMap @sponsorCount={{model.sponsorCount}} />
+</div>
 <br>
-<SponsorGrid @districts={{model.districts}} />
 <br>
+<br>
+
 {{outlet}}

@@ -74,6 +74,8 @@ $totalHeight: 375px;
     @media (min-width: 576px) {
       border-radius: 0 0 0.25rem 0.25rem;
       box-shadow: $box-shadow-1dp;
+      overflow: hidden;
+
     }
   }
 
