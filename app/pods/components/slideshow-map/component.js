@@ -54,7 +54,7 @@ export default Component.extend({
 
   imagesShown: 0,
   currentPhotoIndex: 0,
-  tick: 0,
+  tick: -1,
 
   timeObserver: observer('timepiece.second', function () {
     this.get('timepiece.second');

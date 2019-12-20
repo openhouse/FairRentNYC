@@ -107,6 +107,20 @@ export default Route.extend({
         data.push(dataItem);
       });
 
+      results.sheets.orgs.forEach((item)=> {
+        let dataItem = {
+          type: 'org',
+          id: item.id,
+          attributes: {
+            name: item.name,
+            order: item.order,
+            url: item.url,
+            logo: item.logo,
+          },
+        };
+        data.push(dataItem);
+      });
+
       store.push({
         data: data,
       });
@@ -114,6 +128,7 @@ export default Route.extend({
       return {
         photos: store.peekAll('photo'),
         districts: store.peekAll('district'),
+        orgs: store.peekAll('org'),
         sponsorCount: results.sheets.sponsorhoods.length,
       };
 

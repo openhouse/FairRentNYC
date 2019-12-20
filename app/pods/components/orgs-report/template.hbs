@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="card box-shadow-1dp">
+    <div class="card-body">
+      <div class="h6 line-height strong-font mb-0 pb-0  all-caps">"Pass Commercial Rent Stabilization"</div>
+      <h5 class="strong-font line-height all-caps">Fair Rent NYC Coalition</h5>
+
+      <p class="strong-font all-caps text-justify small line-height">
+        {{#each orgs as |org n|}}
+          {{#if n}}
+            <span class="text-primary">·</span>
+          {{/if}}
+          <a
+            href={{org.url}}
+            class="line-height text-info"
+            target="_blank"
+            >
+            {{org.name}}
+          </a>
+        {{/each}}
+      </p>
+      <div class="flex-fill">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/1sx7BJ6DKLxD6SI9usWs-ZDcdgFAgrF_8/view?usp=sharing"
+          class="btn btn-primary w-100 all-caps strong-font flex-fill">
+          {{fa-icon "file" fixedWidth=true}}
+          Read Report
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+{{yield}}
