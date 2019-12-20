@@ -6,7 +6,7 @@ import { isPresent } from '@ember/utils';
 
 export default Component.extend({
   // SERVICES
-  clock: service('slideshow-clock'),
+  timepiece: service('timepiece'),
 
   // PROPERTIES
   photos: null,
@@ -41,8 +41,6 @@ export default Component.extend({
     return photos[(this.get('currentPhotoIndex') + 1) % photos.length];
   }),
 
-  secondsFromTick: 6,
-
   moveMap: observer('photo.id', function () {
     let photo = this.get('photo');
     let map = this.get('map');
@@ -54,8 +52,28 @@ export default Component.extend({
     });
   }),
 
-  cPI: -1,
   imagesShown: 0,
+  currentPhotoIndex: 0,
+  tick: 0,
+
+  timeObserver: observer('timepiece.second', function () {
+    this.get('timepiece.second');
+    let tick = this.get('tick');
+    let display = this.get('displaySeconds');
+    let transition = this.get('transitionSeconds');
+    let currentPhotoIndex = this.get('currentPhotoIndex');
+    let cycleLength = display + transition;
+    // advance photo every cycleLength
+    if (tick % cycleLength   === 0) {
+      currentPhotoIndex++;
+      this.set('currentPhotoIndex', currentPhotoIndex);
+    }
+    // tick every second
+    tick++;
+    this.set('tick', tick);
+  }),
+
+  /*
   currentPhotoIndex: computed('clock.time', 'displaySeconds', 'transitionSeconds', function () {
     let clockTime = this.get('clock.time');
     let display = this.get('displaySeconds');
@@ -86,7 +104,7 @@ export default Component.extend({
     // return cPI;
     // return 41;
   }),
-
+  */
   actions: {
     initMap(event) {
       let map = event.target;
