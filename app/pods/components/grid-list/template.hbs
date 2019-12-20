@@ -1,0 +1,27 @@
+{{#if name}}
+  <div class="container">
+    <h3 class="all-caps">{{{name}}}</h3>
+    {{#if description}}
+      {{{description}}}
+    {{/if}}
+  </div>
+{{/if}}
+
+<div class="container pl-2 pr-2">
+  <div class="orgs">
+    {{#each items as |item|}}
+      {{#if hasBlock}}
+        {{yield item}}
+      {{else}}
+        {{grid-item
+          preview=preview
+          category=category
+          classNames=classNames
+          name=item.name
+          href=item.href
+          src=item.src
+          line2=item.line2}}
+      {{/if}}
+    {{/each}}
+  </div>
+</div>

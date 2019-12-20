@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { sort } from '@ember/object/computed';
+import { isPresent } from '@ember/utils';
 
 export default Component.extend({
   // SERVICES
@@ -22,7 +23,6 @@ export default Component.extend({
     let shortIndex = Math.floor(photos.get('length') * 0.381966011250145);
 
     let output = [photos[shortIndex]].concat(photos.slice(0, shortIndex - 1)).concat(photos.slice(shortIndex + 1));
-    console.log(output);
     return output;
   }),
 
@@ -44,10 +44,10 @@ export default Component.extend({
   secondsFromTick: 6,
 
   moveMap: observer('photo.id', function () {
+    let photo = this.get('photo');
     let map = this.get('map');
     let zoom = this.get('zoom');
     let transitionSeconds = this.get('transitionSeconds');
-    let photo = this.get('photo');
     map.flyTo([photo.get('y'), photo.get('x')], zoom, {
       animate: true,
       duration: transitionSeconds,

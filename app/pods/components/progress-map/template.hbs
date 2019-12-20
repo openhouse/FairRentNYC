@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="ml-3 mr-3">
+    <h3><b class="">{{remainingCount}} more City Council Members needed</b> to pass the #FairRentNYC Bill.</h3>
+    <BsProgress as |pg| >
+      <pg.bar
+        @value={{sponsorCount}}
+        @minValue={{0}}
+        @maxValue={{26}}
+        @showLabel={{true}}
+        @type="success"
+        @striped={{true}}
+        @animate={{true}}
+        />
+    </BsProgress>
+  </div>
+</div>
+<iframe class="map-iframe box-shadow-1dp mt-2" frameborder="0" src="/s/map.html" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<div class="container">
+  <div class="ml-3 mr-3">
+    <div class="lead">
+      <b>Challenge: Turn the map green.</b>
+    </div>
+    <div>
+      Call City Council Members who haven't
+      signed on yet and ask them to <b>pass Commercial Rent Stabilization</b>.
+      Let your favorite neighborhood spot know.
+      <b>Share with friends across the city. <a href="tel:212-788-7210">Call City Council</a> and turn the map green for #FairRentNYC.</b>
+    </div>
+    <div class="d-flex justify-content-between strong-font pt-3 pb-4">
+      <a class="btn flex-fill btn-primary all-caps" href="tel:212-788-7210">{{fa-icon "phone" fixedWidth=true}} Call</a>
+      <a class="btn flex-fill ml-2 btn-info all-caps" href="https://facebook.com">{{fa-icon "facebook" fixedWidth=true}} Share</a>
+      <a class="btn flex-fill ml-2 btn-info all-caps" href="https://twitter.com">{{fa-icon "twitter" fixedWidth=true}} Share</a>
+    </div>
+  </div>
+</div>
+{{yield}}

@@ -1,25 +1,26 @@
 <div class="container">
-  <div class="box-shadow-1dp--filter">
-    <div
-      class="slideshow"
-      style="
-        background-image: url({{photo.sizes.[9].source}});
-        background-position: 50% {{photo.cssY}}%;
-      "
-      >
-      <div class="gradient-l-50">
-        <div class="slideshow-caption light-narrow-font line-height all-caps">
-          {{#if photo.quote}}
-            <b>"</b>{{photo.quote}}<b>"</b>
-          {{else}}
-            <b>"</b>Pass Commercial Rent Stabilization<b>"</b>
-          {{/if}}
-          <div class="pt-1 location"><small class="all-caps">{{photo.neighborhood}}, {{photo.borough}}</small></div>
+  <div class="map-and-info">
+
+    <div class="box-shadow-1dp--filter">
+      <div
+        class="slideshow"
+        style="
+          background-image: url({{photo.sizes.[9].source}});
+          background-position: 50% {{photo.cssY}}%;
+        "
+        >
+        <div class="gradient-l-50">
+          <div class="slideshow-caption light-narrow-font line-height all-caps">
+            {{#if photo.quote}}
+              <b>"</b>{{photo.quote}}<b>"</b>
+            {{else}}
+              <b>"</b>Pass Commercial Rent Stabilization<b>"</b>
+            {{/if}}
+            <div class="pt-1 location"><small class="all-caps">{{photo.neighborhood}}, {{photo.borough}}</small></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="map-and-info">
     <div class="map">
       {{#leaflet-map
         lng=scoredPhotos.firstObject.x
@@ -55,10 +56,10 @@
             <div style="line-height: 1.3rem;">Thank {{photo.district.name}} for co-sponsoring #FairRentNYC</div>
           </div>
         </div>
-        <div class="d-flex w-100 flex-row align-items-stretch all-caps text-white strong-font pt-2">
-          <a class="btn btn-primary flex-fill" href="tel:{{photo.district.phone2}}">{{fa-icon "phone"}}&nbsp; Call</a>
-          <a class="btn btn-primary flex-fill ml-2" target="_blank">{{fa-icon "envelope"}}&nbsp; Email</a>
-          <a class="btn btn-primary flex-fill ml-2" href="{{photo.district.tweetUrl}}" target="_blank">{{fa-icon "twitter"}}&nbsp; Tweet</a>
+        <div class="d-flex w-100 flex-row align-items-stretch all-caps  strong-font pt-2">
+          <a class="btn btn-primary text-white flex-fill" href="tel:{{photo.district.phone2}}">{{fa-icon "phone"}}&nbsp; Call</a>
+          <a class="btn btn-primary text-white flex-fill ml-2" target="_blank">{{fa-icon "envelope"}}&nbsp; Email</a>
+          <a class="btn btn-primary text-white flex-fill ml-2" href="{{photo.district.tweetUrl}}" target="_blank">{{fa-icon "twitter"}}&nbsp; Tweet</a>
         </div>
       </div>
     {{else}}
@@ -72,10 +73,10 @@
             <div style="line-height: 1.3rem;">Ask {{photo.district.name}}<br>"Pass #FairRentNYC Bill 1796"</div>
           </div>
         </div>
-        <div class="d-flex w-100 flex-row align-items-stretch all-caps text-white strong-font pt-2">
-          <a class="btn btn-primary flex-fill" href="tel:{{photo.district.phone2}}">{{fa-icon "phone"}}&nbsp; Call</a>
-          <a class="btn btn-primary flex-fill ml-2" target="_blank">{{fa-icon "envelope"}}&nbsp; Email</a>
-          <a class="btn btn-primary flex-fill ml-2" href="{{photo.district.tweetUrl}}" target="_blank">{{fa-icon "twitter"}}&nbsp; Tweet</a>
+        <div class="d-flex w-100 flex-row align-items-stretch all-caps  strong-font pt-2">
+          <a class="btn btn-primary text-white flex-fill" href="tel:{{photo.district.phone2}}">{{fa-icon "phone" fixedWidth=true}} Call</a>
+          <a class="btn btn-primary text-white flex-fill ml-2" target="_blank">{{fa-icon "envelope" fixedWidth=true}} Email</a>
+          <a class="btn btn-primary text-white flex-fill ml-2" href="{{photo.district.tweetUrl}}" target="_blank">{{fa-icon "twitter" fixedWidth=true}} Tweet</a>
         </div>
       </div>
     {{/if}}

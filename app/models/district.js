@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
-const { Model, attr, hasMany } = DS;
+import { notEmpty, alias } from '@ember/object/computed';
+const { Model, attr, hasMany, belongsTo } = DS;
 
 export default Model.extend({
   // ATTRIBUTES
@@ -22,19 +23,25 @@ export default Model.extend({
   email: attr(),
   phone2: attr(),
   photoUrl: attr(),
-  isSponsor: attr(),
-  sponsorOrder: attr(),
 
   // RELATIONSHIPS
   photos: hasMany('photo'),
+  sponsorhood: belongsTo('sponsorhood'),
 
   // COMPUTED PROPERTIES
+  isSponsor: notEmpty('sponsorhood.order'),
+  sponsorOrder: alias('sponsorhood.order'),
+
   name: computed('firstName', 'lastName', function () {
     return `${this.get('firstName')} ${this.get('lastName')}`;
   }),
 
-  tweetText: computed('twitterHandle', function () {
-    return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable neighborhoods @NYCCouncil @NYCArtC`;
+  tweetText: computed('twitterHandle', 'isSponsor', function () {
+    if (this.get('isSponsor')) {
+      return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable neighborhoods @NYCCouncil @NYCArtC`;
+    } else {
+      return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable neighborhoods @NYCCouncil @NYCArtC`;
+    }
   }),
 
   tweetUrl: computed('tweetText', function () {

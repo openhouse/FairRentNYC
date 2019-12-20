@@ -1,0 +1,12 @@
+& {
+  // padding-top: $golden-ratio * 1em;
+  // background-color: #f0f0f0;
+}
+
+.orgs {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

@@ -4,40 +4,20 @@ import fetch from 'ember-fetch/ajax';
 import { inject as service } from '@ember/service';
 import { hash } from 'rsvp';
 
-// import councilMembers from 'fairrentnyc/council-districts/district_data/cm_master_file_no_geo';
 export default Route.extend({
   store: service(),
-  sponsorDistricts: [
-    33,
-    16,
-    34,
-    8,
-    37,
-    39,
-    1,
-    26,
-    25,
-    5,
-  ],
   model(params) {
+    let self = this;
     let store = this.get('store');
     let sponsorDistricts = this.get('sponsorDistricts');
     let promises = {
       districts: fetch('/council-districts/district_data/cm_master_file_no_geo.json'),
-      photos: fetch('/s/photos.json'),
+      sheets: fetch('/s/sheets.json'),
     };
 
     return hash(promises).then(function (results) {
       let data = [];
-      results.sponsorDistricts = sponsorDistricts;
       results.districts.forEach((district)=> {
-        if (sponsorDistricts.includes(district.district)) {
-          district.isSponsor = true;
-          district.sponsorOrder = sponsorDistricts.indexOf(district.district);
-        } else {
-          district.isSponsor = false;
-        }
-
         district.photoUrl = `/s/city-council/district-${district.district}.jpg`;
         delete district.council_member.committees;
         let dataItem = {
@@ -62,15 +42,13 @@ export default Route.extend({
             email: district.council_member.PersonEmail,
             phone2: district.council_member.PersonPhone2,
             photoUrl: district.photoUrl,
-            isSponsor: district.isSponsor,
-            sponsorOrder: district.sponsorOrder,
           },
         };
         data.push(dataItem);
 
       });
 
-      results.photos.forEach((photo)=> {
+      results.sheets.photos.forEach((photo)=> {
         let dataItem = {
           type: 'photo',
           id: photo.flickrId,
@@ -109,12 +87,34 @@ export default Route.extend({
         data.push(dataItem);
       });
 
+      results.sheets.sponsorhoods.forEach((item)=> {
+        let dataItem = {
+          type: 'sponsorhood',
+          id: item.id,
+          attributes: {
+            order: item.order,
+          },
+          relationships: {
+            district: {
+              data: {
+                type: 'district',
+                id: item.district,
+              },
+            },
+          },
+
+        };
+        data.push(dataItem);
+      });
+
       store.push({
         data: data,
       });
+
       return {
         photos: store.peekAll('photo'),
         districts: store.peekAll('district'),
+        sponsorCount: results.sheets.sponsorhoods.length,
       };
 
 

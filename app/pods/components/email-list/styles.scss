@@ -1,0 +1,17 @@
+& {
+
+}
+
+.card {
+  border: 0;
+  box-shadow: $box-shadow-1dp;
+}
+  .card-header {
+    background: none;
+    border: 0;
+  }
+
+  label {
+    text-transform: uppercase;
+    color: white;
+  }
