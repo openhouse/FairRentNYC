@@ -37,6 +37,14 @@ $totalHeight: 375px;
     }
     */
   }
+    .progress {
+      height: 0.125rem;
+      border-radius: 0.25rem 0.25rem 0 0;
+      background-color: transparent;
+      position: absolute;
+      width: 100%;
+      opacity: 1/$golden-ratio;
+    }
     .slideshow-controls {
       color: white;
       float: right;
