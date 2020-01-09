@@ -17,6 +17,7 @@ module.exports = function (defaults) {
         'images/marker-icon-2x.png',
         'images/marker-icon.png',
         'images/marker-shadow.png',
+        's/slideshow/tiles',
         //'public/s/graphics/talks-not-raids-preview.jpg'
       ],
     },

@@ -115,7 +115,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     (function () {
     }());
   </script>
-
-
+  <script>
+    setTimeout(function () {
+      mapView._leafletMap.scrollWheelZoom.disable();
+      mapView._leafletMap.setMinZoom(9);
+      mapView._leafletMap.setMaxBounds([
+        [40.494, -73.6972],
+        [40.9176, -74.2584]
+      ]);
+      mapView._leafletMap.panTo([40.70582409,-73.97780021])
+    }, 1000);
+  </script>
   </body>
 </html>

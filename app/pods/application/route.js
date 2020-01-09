@@ -3,6 +3,7 @@ import store from '@ember-data/store';
 import fetch from 'ember-fetch/ajax';
 import { inject as service } from '@ember/service';
 import { hash } from 'rsvp';
+import { isPresent } from '@ember/utils';
 
 export default Route.extend({
   store: service(),
@@ -70,20 +71,27 @@ export default Route.extend({
             flickrId: photo.flickrId,
             sizes: photo.sizes,
             quote: photo.quote,
+            shortQuote: photo.shortQuote,
             borough: photo.borough,
             neighborhood: photo.neighborhood,
             cssY: photo.cssY,
+            display: photo.display,
+            testimonial: photo.testimonial,
+            testimonialRank: photo.testimonialRank,
+            quoteName: photo.nameOfQuotePerson,
           },
-          relationships: {
+        };
+        if (isPresent(photo.district)) {
+          dataItem.relationships = {
             district: {
               data: {
                 type: 'district',
                 id: photo.district,
               },
             },
-          },
+          };
+        }
 
-        };
         data.push(dataItem);
       });
 
@@ -107,6 +115,20 @@ export default Route.extend({
         data.push(dataItem);
       });
 
+      results.sheets.orgs.forEach((item)=> {
+        let dataItem = {
+          type: 'org',
+          id: item.id,
+          attributes: {
+            name: item.name,
+            order: item.order,
+            url: item.url,
+            logo: item.logo,
+          },
+        };
+        data.push(dataItem);
+      });
+
       store.push({
         data: data,
       });
@@ -114,6 +136,7 @@ export default Route.extend({
       return {
         photos: store.peekAll('photo'),
         districts: store.peekAll('district'),
+        orgs: store.peekAll('org'),
         sponsorCount: results.sheets.sponsorhoods.length,
       };
 

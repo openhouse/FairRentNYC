@@ -27,6 +27,8 @@ module.exports = function (environment) {
         'fairrentnyc.com',
         'fairrentnyc.nycartc.com',
         '192.168.0.7:4200',
+        '172.20.10.10:4200',
+        '172.20.10.2:4200',
         /^localhost:\d+$/,],
     },
 

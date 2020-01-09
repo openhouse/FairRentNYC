@@ -1,0 +1,46 @@
+& {
+
+}
+img {
+  border-radius: 1rem / $golden-ratio;
+}
+
+.quote {
+  padding-top: 1rem / $golden-ratio;
+  font-size: 15.2px;
+  text-align: left;
+  @media (min-width: 640px) {
+    font-size: $golden-ratio * 1rem;
+  }
+}
+.oversize {
+  opacity: 0.38197;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  // font-style: italic;
+}
+.quote::first-line {
+  // font-family: $brand-font-family-black;
+  font-family: Arial, ArialMT, 'Helvetica Neue', Helvetica, sans-serif;
+  // font-family: $strong-font-family;
+  // text-transform: uppercase;
+  font-weight: bold;
+}
+
+.large-quote {
+  position: absolute;
+  opacity: 1/$golden-ratio/$golden-ratio;
+  font-size: $golden-ratio * $golden-ratio * 1rem;
+}
+.person {
+  text-align: left;
+  opacity: 1/$golden-ratio;
+  font-size: 15.2px;
+  // font-family: $strong-font-family;
+}
+.share .btn{
+  opacity: 1 - 1/$golden-ratio/$golden-ratio/$golden-ratio;
+ &:hover {
+   opacity: 1;
+ }
+}

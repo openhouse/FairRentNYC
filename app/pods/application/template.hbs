@@ -1,17 +1,21 @@
 <HeadingCover />
 <SlideshowMap @photos={{model.photos}} />
 <br>
+{{!--
+<OrgsReport @orgs={{model.orgs}} />
+<br>
+--}}
 <ComptrollerReport />
 <br>
-<TalkingPoints @sponsorCount={{model.sponsorCount}} />
-<br>
-<EmailList />
-<div class="box-shadow-3dp pastel-border pastel-hi-green pt-3 mt-3" style="border-top-width: 1px; border-top-style: solid;">
+<TalkingPoints @sponsorCount={{model.sponsorCount}} class="pb-4" />
+<EmailList class="pb-4" />
+<div class="box-shadow-3dp pastel-border pastel-hi-green pt-3 " style="border-top-width: 1px; border-top-style: solid;">
   <SponsorGrid @districts={{model.districts}} />
   <br>
   <ProgressMap @sponsorCount={{model.sponsorCount}} />
 </div>
-<br>
+<PhotoSeries @photos={{model.photos}}/>
+
 <br>
 <br>
 
