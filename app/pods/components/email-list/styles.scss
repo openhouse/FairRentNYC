@@ -1,9 +1,12 @@
 & {
   // background-color: #ccb9b0;
   // background-color: #ffece4;
-  background-color: #fee1d4;
+  // background-color: #c5fdd7;
   padding-bottom: 0;
   margin-bottom: 0;
+  background-image:
+    linear-gradient(to bottom, #c7ffc8 0%, #ffde16 100%/$golden-ratio, #fba318);
+
 }
 
 .card {
