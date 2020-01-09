@@ -3,6 +3,7 @@ import store from '@ember-data/store';
 import fetch from 'ember-fetch/ajax';
 import { inject as service } from '@ember/service';
 import { hash } from 'rsvp';
+import { isPresent } from '@ember/utils';
 
 export default Route.extend({
   store: service(),
@@ -70,20 +71,27 @@ export default Route.extend({
             flickrId: photo.flickrId,
             sizes: photo.sizes,
             quote: photo.quote,
+            shortQuote: photo.shortQuote,
             borough: photo.borough,
             neighborhood: photo.neighborhood,
             cssY: photo.cssY,
+            display: photo.display,
+            testimonial: photo.testimonial,
+            testimonialRank: photo.testimonialRank,
+            quoteName: photo.nameOfQuotePerson,
           },
-          relationships: {
+        };
+        if (isPresent(photo.district)) {
+          dataItem.relationships = {
             district: {
               data: {
                 type: 'district',
                 id: photo.district,
               },
             },
-          },
+          };
+        }
 
-        };
         data.push(dataItem);
       });
 

@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { sort } from '@ember/object/computed';
+import { sort, filterBy } from '@ember/object/computed';
 import { isPresent } from '@ember/utils';
 
 export default Component.extend({
@@ -16,9 +16,10 @@ export default Component.extend({
   map: null,
 
   // COMPUTED PROPERTIES
+  mapPhotos: filterBy('photos', 'isMapPhoto', true),
   scoreSorting: ['score'],
-  scoredPhotosSorted: sort('photos', 'scoreSorting'),
-  scoredPhotos: computed('scoredPhotos.[]', function () {
+  scoredPhotosSorted: sort('mapPhotos', 'scoreSorting'),
+  scoredPhotos: computed('scoredPhotosSorted.[]', function () {
     let photos = this.get('scoredPhotosSorted');
     let shortIndex = Math.floor(photos.get('length') * 0.381966011250145);
 

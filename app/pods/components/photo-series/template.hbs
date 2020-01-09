@@ -1,0 +1,6 @@
+<div class="container">
+  {{#each seriesPhotos as |photo|}}
+    <PhotoFeature @photo={{photo}} />
+  {{/each}}
+  {{yield}}
+</div>

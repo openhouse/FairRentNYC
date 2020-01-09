@@ -1,0 +1,23 @@
+{{#if photo.postedTwitter}}
+  <a href="{{photo.twitterLink}}" target="_blank"><img class="photo" src="{{feature.src}}" /></a>
+{{else}}
+  <a href="{{photo.sizes.lastObject.source}}" target="_blank"><img class="photo" src="{{photo.sizes.9.source}}" /></a>
+{{/if}}
+{{!--
+{{feature.photoLink}}
+--}}
+<div class="quote"><span class="primary-font-family oversize">“ </span>{{photo.quote}}<span class="oversize pl-1">”</span></div>
+
+{{#if photo.quoteName}}
+  <div class="person"><i>{{photo.quoteName}}{{#if photo.businessName}}, {{photo.businessName}}{{/if}}</i></div>
+{{/if}}
+{{!--
+<div class="pastel-text pastel-white text-left">Share:</div>
+<div class="share">{{
+  social-share
+  message=false
+  fbLink=feature.fbLink
+  twitterLink=feature.twitterLink
+}}</div>
+{{yield}}
+--}}
