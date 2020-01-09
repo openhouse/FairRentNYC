@@ -37,6 +37,19 @@ $totalHeight: 375px;
     }
     */
   }
+    .slideshow-controls {
+      color: white;
+      float: right;
+      .btn {
+        color: white;
+        text-shadow: $text-shadow-1dp--dark;
+        border: 0;
+        &:hover, &:active {
+          text-shadow: none;
+          box-shadow: $box-shadow-1dp;
+        }
+      }
+    }
     .slideshow-heading {
       color: white;
       text-shadow: $text-shadow-1dp--dark;
@@ -72,8 +85,12 @@ $totalHeight: 375px;
         // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.381966011250145), rgba(0, 0, 0, 0));
         height: 100%;
         width: 100% - 100%/$golden-ratio;
-      .location{
-        font-family: $strong-narrow-font-family
+      .location {
+        font-family: $strong-narrow-font-family;
+        .line-height {
+          // line-height: 0.70188679248em !important;
+          display: inline-block;
+        }
       }
     }
   .map-and-info {

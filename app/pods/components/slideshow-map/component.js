@@ -4,6 +4,10 @@ import { inject as service } from '@ember/service';
 import { sort, filterBy } from '@ember/object/computed';
 import { isPresent } from '@ember/utils';
 
+function mod(n, m) {
+  return ((n % m) + m) % m;
+}
+
 export default Component.extend({
   // SERVICES
   timepiece: service('timepiece'),
@@ -14,6 +18,7 @@ export default Component.extend({
   displaySeconds: 5, // 4
   transitionSeconds: 1,
   map: null,
+  playing: true,
 
   // COMPUTED PROPERTIES
   mapPhotos: filterBy('photos', 'isMapPhoto', true),
@@ -66,8 +71,10 @@ export default Component.extend({
     let cycleLength = display + transition;
     // advance photo every cycleLength
     if (tick % cycleLength   === 0) {
-      currentPhotoIndex++;
-      this.set('currentPhotoIndex', currentPhotoIndex);
+      if (this.get('playing')) {
+        currentPhotoIndex++;
+        this.set('currentPhotoIndex', currentPhotoIndex);
+      }
     }
     // tick every second
     tick++;
@@ -111,6 +118,47 @@ export default Component.extend({
       let map = event.target;
       this.set('map', event.target);
     },
+
+    /*
+      SLIDESHOW CONTROLS
+    */
+    togglePlay() {
+      let playing = this.get('playing');
+      playing = !playing;
+      this.set('playing', playing);
+      if (playing) {
+        let display = this.get('displaySeconds');
+        let transition = this.get('transitionSeconds');
+        let cycleLength = display + transition;
+        this.set('tick', cycleLength);
+      }
+    },
+
+    next() {
+      let currentPhotoIndex = this.get('currentPhotoIndex');
+
+      let photosCount = this.get('scoredPhotos.length');
+      // currentPhotoIndex = (currentPhotoIndex + 1) % photosCount;
+      currentPhotoIndex = mod(currentPhotoIndex + 1, photosCount);
+
+      this.set('currentPhotoIndex', currentPhotoIndex);
+      this.set('playing', false);
+    },
+
+    prev() {
+      let currentPhotoIndex = this.get('currentPhotoIndex');
+
+      let photosCount = this.get('scoredPhotos.length');
+      currentPhotoIndex = mod(currentPhotoIndex - 1, photosCount);
+
+      // currentPhotoIndex = (currentPhotoIndex - 1) % photosCount;
+      console.log('currentPhotoIndex', currentPhotoIndex);
+      console.log('photosCount', photosCount);
+
+      this.set('currentPhotoIndex', currentPhotoIndex);
+      this.set('playing', false);
+    },
+
   },
 
 });
