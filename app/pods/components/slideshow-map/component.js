@@ -26,7 +26,7 @@ export default Component.extend({
   scoredPhotosSorted: sort('mapPhotos', 'scoreSorting'),
   scoredPhotos: computed('scoredPhotosSorted.[]', function () {
     let photos = this.get('scoredPhotosSorted');
-    let shortIndex = Math.floor(photos.get('length') * 0.381966011250145);
+    let shortIndex = Math.floor(photos.get('length') * 0.381966011250145) - 2;
 
     let output = [photos[shortIndex]].concat(photos.slice(0, shortIndex - 1)).concat(photos.slice(shortIndex + 1));
     return output;

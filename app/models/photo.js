@@ -2,6 +2,7 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 import { notEmpty, alias } from '@ember/object/computed';
 const { Model, attr, belongsTo } = DS;
+import { isPresent } from '@ember/utils';
 
 export default Model.extend({
   // ATTRIBUTES
@@ -43,6 +44,15 @@ export default Model.extend({
     let priority = this.get('districtPriority') / 51;
     let photoRank = this.get('normalizedPhotoRank');
     return Math.pow((Math.pow(priority, 2) + Math.pow(photoRank, 2)), 0.5);
+  }),
+
+  cssYPercent: computed('cssY', function () {
+    let cssY = this.get('cssY');
+    if (isPresent(cssY)) {
+      return cssY;
+    } else {
+      return 62;
+    }
   }),
 
 });

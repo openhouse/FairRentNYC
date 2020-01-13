@@ -6,9 +6,10 @@
         class="slideshow"
         style="
           background-image: url({{photo.sizes.[9].source}});
-          background-position: 50% {{photo.cssY}}%;
+          background-position: 50% 50%;
         "
         >
+        {{!-- {{photo.cssYPercent}} --}}
         {{#if playing}}
           <BsProgress as |pg|>
             <pg.bar
