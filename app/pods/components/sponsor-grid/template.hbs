@@ -10,7 +10,10 @@
     </p>
 
     <div class="pt-3 pb-2 d-flex align-items-center">
-      {{fa-icon "trophy" class="text-warning pr-3 d-none d-sm-block" size="2"}}
+      <div class="pr-3 strong-font h1  pb-0 pt-0 mt-0 mb-0 line-height">
+        {{sponsors.length}}
+      </div>
+      {{!-- {{fa-icon "trophy" class="text-warning pr-3 d-none d-sm-block" size="2"}} --}}
       <h4 class="strong-font all-caps line-height p-0 m-0 mr-auto d-sm-none">
         NY City Council Members<br> <small>Signed On to <span class="nowrap">Fair Rent NYC Bill</span></small>
       </h4>
@@ -20,11 +23,17 @@
     </div>
 
     <p class="lead">
-      {{fa-icon "trophy" class="text-warning d-sm-none" size="lg" fixedWidth=true}}
-
+      {{!--
+      {{fa-icon "trophy" class="text-warning" size="lg" fixedWidth=true}}
+      --}}
       NYC's diverse community spaces <b class="all-caps">thank</b> City Council
-      <b class="all-caps">champions</b> of #FairRentNYC Commercial Rent
-      Stabilization bill 1796.  Tap each to tweet "thank you."
+      {{fa-icon "trophy" class="text-warning" fixedWidth=false}}
+      <b class="all-caps">champions</b>
+      {{fa-icon "trophy" class="text-warning" fixedWidth=false}}
+      of #FairRentNYC Commercial Rent
+      Stabilization
+      <a target="_blank" href="https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=4230081&GUID=B2FF2D24-F642-42A1-BEBB-D8D59E079D99&Options=ID|Text|&Search=1796">bill 1796</a>.
+      Tap each to tweet "thank you."
     </p>
 
     <div class="mb-3"> {{!--  d-sm-none --}}

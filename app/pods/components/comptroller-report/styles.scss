@@ -11,3 +11,9 @@
     border: 0;
     background: transparent;
   }
+  a {
+    &:hover, &:active {
+      text-decoration: none;
+      color: map-get($oil-pastels, 'hi-pink');
+    }
+  }

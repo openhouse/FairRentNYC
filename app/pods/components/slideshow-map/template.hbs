@@ -9,16 +9,17 @@
           background-position: 50% {{photo.cssY}}%;
         "
         >
-        {{!--
-        <BsProgress as |pg|>
-          <pg.bar
-            @value={{currentPhotoIndex}}
-            @minValue={{-1}}
-            @maxValue={{scoredPhotos.length}}
-            @type="default"
-           />
-        </BsProgress>
-        --}}
+        {{#if playing}}
+          <BsProgress as |pg|>
+            <pg.bar
+              @value={{cyclePos}}
+              @minValue={{0}}
+              @maxValue={{cycleLength}}
+              @type="info"
+             />
+          </BsProgress>
+        {{/if}}
+
         <div class="gradient-l-50">
           <div class="slideshow-controls btn-group pt-1 pr-2 line-height" role="group" aria-label="Slideshow Controls">
             <button

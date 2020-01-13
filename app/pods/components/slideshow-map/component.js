@@ -61,6 +61,13 @@ export default Component.extend({
   imagesShown: 0,
   currentPhotoIndex: 0,
   tick: -1,
+  cycleLength: computed('displaySeconds', 'transitionSeconds', function () {
+    return this.get('transitionSeconds') + this.get('displaySeconds');
+  }),
+
+  cyclePos: computed('tick', 'cycleLength', function () {
+    return mod(this.get('tick') - 1, this.get('cycleLength'));
+  }),
 
   timeObserver: observer('timepiece.second', function () {
     this.get('timepiece.second');
@@ -81,38 +88,6 @@ export default Component.extend({
     this.set('tick', tick);
   }),
 
-  /*
-  currentPhotoIndex: computed('clock.time', 'displaySeconds', 'transitionSeconds', function () {
-    let clockTime = this.get('clock.time');
-    let display = this.get('displaySeconds');
-    let transition = this.get('transitionSeconds');
-    let cycleLength = display + transition;
-    let secondsFromTick = this.get('secondsFromTick');
-    let cPI = this.get('cPI');
-    secondsFromTick++;
-    if (this.get('imagesShown') < 2) {
-      secondsFromTick = cycleLength;
-      this.set('imagesShown', this.get('imagesShown') + 1);
-    }
-
-    if (secondsFromTick >= cycleLength) {
-      secondsFromTick = 0;
-      cPI++;
-      this.set('cPI', cPI);
-    }
-
-    this.set('secondsFromTick', secondsFromTick);
-    if (secondsFromTick === 0) {
-      if (cPI < 0) {
-        return 0;
-      }
-
-      return cPI;
-    }
-    // return cPI;
-    // return 41;
-  }),
-  */
   actions: {
     initMap(event) {
       let map = event.target;
