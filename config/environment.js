@@ -30,6 +30,7 @@ module.exports = function (environment) {
         '172.20.10.10:4200',
         '172.20.10.2:4200',
         /^localhost:\d+$/,],
+        'dev51.nycartc.com'
     },
 
   };
