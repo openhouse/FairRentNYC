@@ -164,11 +164,25 @@ $totalHeight: 375px;
     }
 
     border-radius: 0 0 0.25rem 0.25rem;
+
+    .member-message {
+      font-family: $strong-font-family;
+      line-height: 0.8773584906em;
+
+      @media (min-width: 576px) {
+        font-family: $book-font-family;
+        line-height: 1.3rem;
+      }
+
+    }
   }
 
     .profile-image--sm {
       height: 4rem;
       width: 4rem;
+      min-width: 4rem;
+      max-width: 4rem;
+
       background-size: cover;
     }
 
@@ -178,6 +192,10 @@ $totalHeight: 375px;
   .profile-image--sm {
     border: 3px solid #ffb101;
     height: 4rem;
+    width: 4rem;
+    min-width: 4rem;
+    max-width: 4rem;
+
   }
   .label {
     font-family: $strong-narrow-font-family;

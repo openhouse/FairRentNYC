@@ -29,8 +29,10 @@ module.exports = function (environment) {
         '192.168.0.7:4200',
         '172.20.10.10:4200',
         '172.20.10.2:4200',
+        '192.168.1.137:4200',
         'dev51.nycartc.com',
-        /^localhost:\d+$/, ],
+        /^localhost:\d+$/,
+      ],
     },
 
   };

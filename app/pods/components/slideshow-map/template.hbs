@@ -83,38 +83,38 @@
     {{#if photo.district.isSponsor}}
      {{!-- photo.district.isSponsor--}}
       <div class="district-info sponsor">
-        <div class="d-flex flex-row align-items-start">
+        <div class="d-flex flex-row align-items-center">
           <div
             class="rounded-circle profile-image--sm text-center"
             style="background-image: url({{photo.district.remotePhotoUrl}})">
             <small class="all-caps label">{{fa-icon "trophy"}} Sponsor</small>
           </div>
           <div class="pl-2 flex-grow-1">
-            <small><b class="all-caps">City Council Member: District {{photo.district.districtNumber}}</b></small>
-            <div style="line-height: 1.3rem;">Thank {{photo.district.name}} for co-sponsoring #FairRentNYC</div>
+            <small class="d-block all-caps line-height pb-1"><b>City Council Member: <span class="nowrap">District {{photo.district.districtNumber}}</span></b></small>
+            <div class="member-message">Thank {{photo.district.name}} <span class=""><br></span> for co-sponsoring #FairRentNYC</div>
           </div>
         </div>
         <div class="d-flex w-100 flex-row align-items-stretch all-caps  strong-font pt-2">
-          <a class="btn btn-primary text-white flex-fill" href="tel:{{photo.district.phone2}}">{{fa-icon "phone"}}&nbsp; Call</a>
-          <a class="btn btn-primary text-white flex-fill ml-2" target="_blank">{{fa-icon "envelope"}}&nbsp; Email</a>
-          <a class="btn btn-primary text-white flex-fill ml-2" href="{{photo.district.tweetUrl}}" target="_blank">{{fa-icon "twitter"}}&nbsp; Tweet</a>
+          <a class="btn btn-primary text-white flex-fill" href="tel:{{photo.district.phone2}}">{{fa-icon "phone" fixedWidth=true class="d-none d-sm-inline pr-1"}} Call</a>
+          <a class="btn btn-primary text-white flex-fill ml-2" target="_blank">{{fa-icon "envelope" fixedWidth=true class="d-none d-sm-inline pr-1"}} Email</a>
+          <a class="btn btn-primary text-white flex-fill ml-2" href="{{photo.district.tweetUrl}}" target="_blank">{{fa-icon "twitter" fixedWidth=true class="d-none d-sm-inline pr-1"}} Tweet</a>
         </div>
       </div>
     {{else}}
       <div class="district-info">
-        <div class="d-flex flex-row align-items-start">
+        <div class="d-flex flex-row align-items-center">
           <div
             class="rounded-circle profile-image--sm"
             style="background-image: url({{photo.district.remotePhotoUrl}})"></div>
           <div class="pl-2 flex-grow-1">
-            <small><b class="all-caps">City Council Member: District {{photo.district.districtNumber}}</b></small>
-            <div style="line-height: 1.3rem;">Ask {{photo.district.name}}<br>"Pass #FairRentNYC Bill 1796"</div>
+            <small class="d-block all-caps line-height pb-1"><b>City Council Member: <span class="nowrap">District {{photo.district.districtNumber}}</span></b></small>
+            <div class="member-message">Ask {{photo.district.name}} <span class="d-sm-inline"><br></span> "Pass #FairRentNYC Bill 1796"</div>
           </div>
         </div>
         <div class="d-flex w-100 flex-row align-items-stretch all-caps  strong-font pt-2">
-          <a class="btn btn-primary text-white flex-fill" href="tel:{{photo.district.phone2}}">{{fa-icon "phone" fixedWidth=true}} Call</a>
-          <a class="btn btn-primary text-white flex-fill ml-2" target="_blank">{{fa-icon "envelope" fixedWidth=true}} Email</a>
-          <a class="btn btn-primary text-white flex-fill ml-2" href="{{photo.district.tweetUrl}}" target="_blank">{{fa-icon "twitter" fixedWidth=true}} Tweet</a>
+          <a class="btn btn-primary text-white flex-fill" href="tel:{{photo.district.phone2}}">{{fa-icon "phone" fixedWidth=true class="d-none d-sm-inline pr-1"}} Call</a>
+          <a class="btn btn-primary text-white flex-fill ml-2" target="_blank">{{fa-icon "envelope" fixedWidth=true class="d-none d-sm-inline pr-1"}} Email</a>
+          <a class="btn btn-primary text-white flex-fill ml-2" href="{{photo.district.tweetUrl}}" target="_blank">{{fa-icon "twitter" fixedWidth=true class="d-none d-sm-inline pr-1"}} Tweet</a>
         </div>
       </div>
     {{/if}}
