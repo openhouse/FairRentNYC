@@ -4,6 +4,8 @@ import { notEmpty, alias } from '@ember/object/computed';
 const { Model, attr, belongsTo } = DS;
 import { isPresent } from '@ember/utils';
 
+const defaultQuote = 'Pass Commercial Rent Stabilization';
+
 export default Model.extend({
   // ATTRIBUTES
   vacantSpaceId: attr(),
@@ -23,7 +25,9 @@ export default Model.extend({
   personInPhoto: attr(),
   flickrId: attr(),
   sizes: attr(),
-  quote: attr(),
+  rawQuoteMd: attr(),
+  rawQuoteSm: attr(),
+  rawQuoteXs: attr(),
   shortQuote: attr(),
   borough: attr(),
   neighborhood: attr(),
@@ -36,7 +40,38 @@ export default Model.extend({
   // RELATIONSHIPS
   district: belongsTo('district'),
 
-  // COMPUTED PROPERTIES
+  /*
+  COMPUTED PROPERTIES
+  */
+
+  // responsive quote text
+  quoteMd: computed('rawQuoteMd', function () {
+    let rawQuoteMd = this.get('rawQuoteMd');
+    if (isPresent(rawQuoteMd)) {
+      return rawQuoteMd.trim();
+    }
+
+    return defaultQuote;
+  }),
+
+  quoteSm: computed('rawQuoteSm', 'quoteMd', function () {
+    let rawQuoteSm = this.get('rawQuoteSm');
+    if (isPresent(rawQuoteSm)) {
+      return rawQuoteSm.trim();
+    }
+
+    return this.get('quoteMd');
+  }),
+
+  quoteXs: computed('rawQuoteXs', function () {
+    let rawQuoteXs = this.get('rawQuoteXs');
+    if (isPresent(rawQuoteXs)) {
+      return rawQuoteXs.trim();
+    }
+
+    return this.get('quoteSm');
+  }),
+
   isMapPhoto: notEmpty('display'),
   isTestimonial: notEmpty('testimonial'),
   testimonialOrder: alias('testimonialRank'),
