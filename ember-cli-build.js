@@ -18,7 +18,9 @@ module.exports = function (defaults) {
         'images/marker-icon.png',
         'images/marker-shadow.png',
         's/slideshow/tiles',
-        '/s/img/fairrentnyc-og-image-10.jpg',
+        's/img/fairrentnyc-og-image-10.jpg',
+        'public/s/img/fairrentnyc-og-image-10.jpg',
+
         //'public/s/graphics/talks-not-raids-preview.jpg'
       ],
     },

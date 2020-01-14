@@ -154,7 +154,7 @@ export default Route.extend({
   project: 'Fair Rent NYC - Pass Commercial Rent Stabilization Bill 1796',
   description: 'Rent closes NYC spaces. Pass #FairRentNYC Commercial Rent Stabilization for diverse affordable neighborhoods.',
   canonical: 'http://fairrentnyc.nycartc.com',
-  host: 'http://fairrentnyc.nycartc.com',
+  host: 'http://dev51.nycartc.com',
   image: '/s/img/fairrentnyc-og-image-10.jpg',
 
   headTags: Ember.computed('title', function () {
