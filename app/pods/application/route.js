@@ -7,6 +7,7 @@ import { isPresent } from '@ember/utils';
 
 export default Route.extend({
   store: service(),
+
   model(params) {
     let self = this;
     let store = this.get('store');
@@ -148,5 +149,169 @@ export default Route.extend({
     });
 
   },
+
+  title: 'Fair Rent NYC - Pass Commercial Rent Stabilization Bill 1796',
+  project: 'Fair Rent NYC - Pass Commercial Rent Stabilization Bill 1796',
+  description: 'Rent closes NYC spaces. Pass #FairRentNYC Commercial Rent Stabilization for diverse affordable neighborhoods.',
+  canonical: 'http://fairrentnyc.nycartc.com',
+  host: 'http://fairrentnyc.nycartc.com',
+  image: '/s/img/fairrentnyc-og-image-10.jpg',
+
+  headTags: Ember.computed('title', function () {
+    let tags = [];
+    tags.push({
+      type: 'title',
+      tagId: 'title-tag',
+      content: this.get('title'),
+    });
+    tags.push({
+      type: 'description',
+      tagId: 'description-tag',
+      content: this.get('description'),
+    });
+
+    tags.push({
+      type: 'link',
+      tagId: 'link-canonical-tag',
+      attrs: {
+        href: this.get('canonical'),
+      },
+    });
+
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-fb-app_id-tag',
+      attrs: {
+        property: 'fb:app_id',
+        content: '1534813103259735',
+      },
+    });
+
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-locale-tag',
+      attrs: {
+        property: 'og:locale',
+        content: 'en_US',
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-type-tag',
+      attrs: {
+        property: 'og:type',
+        content: 'website',
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-title-tag',
+      attrs: {
+        property: 'og:title',
+        content: this.get('project'),
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-description-tag',
+      attrs: {
+        property: 'og:description',
+        content: this.get('description'),
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-url-tag',
+      attrs: {
+        property: 'og:url',
+        content: this.get('canonical'),
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-site_name-tag',
+      attrs: {
+        property: 'og:site_name',
+        content: this.get('title'),
+      },
+    });
+
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-image-tag',
+      attrs: {
+        property: 'og:image',
+        content: `${this.get('host')}${this.get('image')}`,
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-image-width-tag',
+      attrs: {
+        property: 'og:image:width',
+        content: 1200,
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-og-image-height-tag',
+      attrs: {
+        property: 'og:image:height',
+        content: 630,
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-twitter-image-tag',
+      attrs: {
+        name: 'twitter:image',
+        content: `${this.get('host')}${this.get('image')}`,
+      },
+    });
+
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-twitter-card-tag',
+      attrs: {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-twitter-site-tag',
+      attrs: {
+        name: 'twitter:site',
+        content: '@NYCArtC',
+      },
+    });
+
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-twitter-creator-tag',
+      attrs: {
+        name: 'twitter:creator',
+        content: '@NYCArtC',
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-twitter-title-tag',
+      attrs: {
+        name: 'twitter:title',
+        content: this.get('project'),
+      },
+    });
+    tags.push({
+      type: 'meta',
+      tagId: 'meta-twitter-description-tag',
+      attrs: {
+        name: 'twitter:description',
+        content: this.get('description'),
+      },
+    });
+
+    return tags;
+  }),
 
 });
