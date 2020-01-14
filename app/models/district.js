@@ -38,9 +38,9 @@ export default Model.extend({
 
   tweetText: computed('twitterHandle', 'isSponsor', function () {
     if (this.get('isSponsor')) {
-      return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable neighborhoods @NYCCouncil @NYCArtC`;
+      return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable diverse neighborhoods @NYCCouncil @NYCArtC`;
     } else {
-      return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable neighborhoods @NYCCouncil @NYCArtC`;
+      return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable diverse neighborhoods @NYCCouncil @NYCArtC`;
     }
   }),
 
