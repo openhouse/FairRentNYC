@@ -27,15 +27,43 @@ export default Component.extend({
   scoredPhotosSorted: sort('mapPhotos', 'scoreSorting'),
 
   scoredPhotosSortedAlternating: computed('scoredPhotosSorted.[]', function () {
-    let photos = this.get('scoredPhotosSorted');
+    let photosIn = this.get('scoredPhotosSorted');
+    let photosOut = [photosIn[0]];
+    photosIn.shift();
 
+    while (photosIn.length > 0) {
+      let lastPhoto = photosOut[photosOut.length - 1];
+      let found = false;
+      let n = 0;
+      while (!found) {
+        if (
+          (
+            (lastPhoto.get('district.districtNumber') !== photosIn[n].get('district.districtNumber'))
+            && (
+              !lastPhoto.get('district.isSponsor') ||
+              (lastPhoto.get('district.isSponsor') !== photosIn[n].get('district.isSponsor'))
+            )
+          ) || photosIn.length < 6
+        ) {
+          photosOut.push(photosIn[n]);
+          photosIn.splice(n, 1);
+          found = true;
+        } else {
+          n++;
+        }
+      }
+    }
+
+    return photosOut;
   }),
 
-  scoredPhotos: computed('scoredPhotosSorted.[]', function () {
-    let photos = this.get('scoredPhotosSorted');
-    let shortIndex = Math.floor(photos.get('length') * 0.381966011250145) - 2;
+  scoredPhotos: computed('scoredPhotosSortedAlternating.[]', function () {
+    let photos = this.get('scoredPhotosSortedAlternating');
+    let shortIndex = Math.floor(photos.get('length') * 0.381966011250145) - 1;
 
-    let output = [photos[shortIndex]].concat(photos.slice(0, shortIndex - 1)).concat(photos.slice(shortIndex + 1));
+    let output = [photos[shortIndex]];
+    output = output.concat(photos.slice(0, shortIndex - 0));
+    output = output.concat(photos.slice(shortIndex + 1));
     return output;
   }),
 

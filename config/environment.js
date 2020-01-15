@@ -64,7 +64,7 @@ module.exports = function (environment) {
   ENV['ember-toastr'] = {
     toastrOptions: {
       closeButton: true,
-      debug: true,
+      debug: false,
       newestOnTop: true,
       progressBar: false,
       positionClass: 'toast-top-right',
