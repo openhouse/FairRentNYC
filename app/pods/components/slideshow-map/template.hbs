@@ -98,7 +98,7 @@
         <div class="d-flex flex-row align-items-center">
           <div
             class="rounded-circle profile-image--sm text-center"
-            style="background-image: url({{photo.district.remotePhotoUrl}})">
+            style="background-image: url({{photo.district.remotePhotoUrl300}})">
             <small class="all-caps label">{{fa-icon "trophy"}} Sponsor</small>
           </div>
           <div class="pl-2 flex-grow-1">
@@ -117,7 +117,7 @@
         <div class="d-flex flex-row align-items-center">
           <div
             class="rounded-circle profile-image--sm"
-            style="background-image: url({{photo.district.remotePhotoUrl}})"></div>
+            style="background-image: url({{photo.district.remotePhotoUrl300}})"></div>
           <div class="pl-2 flex-grow-1">
             <small class="d-block all-caps line-height pb-1"><b>City Council Member: <span class="nowrap">District {{photo.district.districtNumber}}</span></b></small>
             <div class="member-message">Ask {{photo.district.name}} <span class="d-sm-inline"><br></span> "Pass #FairRentNYC Bill 1796"</div>
@@ -135,7 +135,7 @@
 {{!-- preload images--}}
 <div class="d-none">
   <img src={{nextPhoto.sizes.[9].source}}>
-  <img src={{nextPhoto.district.remotePhotoUrl}}>
+  <img src={{nextPhoto.district.remotePhotoUrl300}}>
   {{currentPhotoIndex}}
 </div>
 {{yield}}

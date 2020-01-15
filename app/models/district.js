@@ -32,6 +32,10 @@ export default Model.extend({
   isSponsor: notEmpty('sponsorhood.order'),
   sponsorOrder: alias('sponsorhood.order'),
 
+  remotePhotoUrl300: computed('remotePhotoUrl', function () {
+    return `https://res.cloudinary.com/nycartc/image/fetch/w_300,h_300,c_fill,g_face/${this.get('remotePhotoUrl')}`;
+  }),
+
   name: computed('firstName', 'lastName', function () {
     return `${this.get('firstName')} ${this.get('lastName')}`;
   }),
