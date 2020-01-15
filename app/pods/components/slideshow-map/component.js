@@ -11,6 +11,7 @@ function mod(n, m) {
 export default Component.extend({
   // SERVICES
   timepiece: service('timepiece'),
+  notifications: service('toast'),
 
   // PROPERTIES
   photos: null,
@@ -24,6 +25,12 @@ export default Component.extend({
   mapPhotos: filterBy('photos', 'isMapPhoto', true),
   scoreSorting: ['score'],
   scoredPhotosSorted: sort('mapPhotos', 'scoreSorting'),
+
+  scoredPhotosSortedAlternating: computed('scoredPhotosSorted.[]', function () {
+    let photos = this.get('scoredPhotosSorted');
+
+  }),
+
   scoredPhotos: computed('scoredPhotosSorted.[]', function () {
     let photos = this.get('scoredPhotosSorted');
     let shortIndex = Math.floor(photos.get('length') * 0.381966011250145) - 2;
@@ -97,6 +104,11 @@ export default Component.extend({
     /*
       SLIDESHOW CONTROLS
     */
+    copyLink() {
+      let notifications = this.get('notifications');
+      notifications.success('&#x1f517; Link Copied to Clipboard');
+    },
+
     togglePlay() {
       let playing = this.get('playing');
       playing = !playing;

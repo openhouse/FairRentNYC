@@ -22,32 +22,54 @@
         {{/if}}
 
         <div class="gradient-l-50">
-          <div class="slideshow-controls btn-group pt-1 pr-2 line-height" role="group" aria-label="Slideshow Controls">
+          <div class="slideshow-controls pt-1 pr-2">
+            <div class=" btn-group line-height" role="group" aria-label="Slideshow Controls">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                {{action "prev"}}
+                >
+                {{fa-icon "caret-left" size="lg"}}
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                {{action "togglePlay"}}
+                >
+                {{#if playing}}
+                  {{fa-icon "pause" fixedWidth=true}}
+                {{else}}
+                  {{fa-icon "play" fixedWidth=true}}
+                {{/if}}
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                {{action "next"}}
+                >
+                {{fa-icon "caret-right" size="lg"}}
+              </button>
+            </div>
+            {{#if (is-clipboard-supported)}}
+              <CopyButton
+               @clipboardText="http://FairRentNYC.com"
+               @success={{action "copyLink"}}
+               title="copy to clipboard"
+               class="btn btn-outline-primary"
+              >
+                {{fa-icon "sign-out" rotate=270 size=""}}
+              </CopyButton>
+            {{/if}}
+            {{!--
+            @error={{this.onError}}
+
             <button
               type="button"
-              class="btn btn-outline-primary"
               {{action "prev"}}
               >
-              {{fa-icon "caret-left" size="lg"}}
+              {{fa-icon "sign-out" rotate=270 size=""}}
             </button>
-            <button
-              type="button"
-              class="btn btn-outline-primary"
-              {{action "togglePlay"}}
-              >
-              {{#if playing}}
-                {{fa-icon "pause" fixedWidth=true}}
-              {{else}}
-                {{fa-icon "play" fixedWidth=true}}
-              {{/if}}
-            </button>
-            <button
-              type="button"
-              class="btn btn-outline-primary"
-              {{action "next"}}
-              >
-              {{fa-icon "caret-right" size="lg"}}
-            </button>
+            --}}
           </div>
           <div class="pt-3 pl-3 slideshow-heading strong-font line-height all-caps">
             Neighbors of NYC's 15,000 Shuttered Storefronts Demand #FairRentNYC

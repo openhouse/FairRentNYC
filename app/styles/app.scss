@@ -22,10 +22,12 @@ $identity-color-light: #d3edf7;
 @font-face {
   font-family: "Arial Black";
   src: url('/s/fonts/Arial-Black.otf');
+  font-display: swap;
 }
 @font-face {
   font-family: round-book;
   src: url('/s/fonts/round-book.otf');
+  font-display: swap;
 }
 
 /*
@@ -56,6 +58,7 @@ $identity-color-light: #d3edf7;
       url("/s/fonts/TradeGothicLTPro-Bold.woff2") format("woff2"),
       url("/s/fonts/TradeGothicLTPro-Bold.woff") format("woff"),
       url('/s/fonts/TradeGothicLTPro-Bold.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
@@ -63,15 +66,18 @@ $identity-color-light: #d3edf7;
   src: url('/s/fonts/TradeGothic-BoldCondTwenty.eot?') format('eot'),
       url("/s/fonts/TradeGothic-BoldCondTwenty.woff") format("woff"),
       url('/s/fonts/TradeGothic-BoldCondTwenty.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: headline-narrow-light;
   src: url('/s/fonts/trade-gothic-condensed.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: headline-light;
   src: url('/s/fonts/Trade-Gothic-LT.ttf') format('truetype');
+  font-display: swap;
 }
 
 
@@ -490,5 +496,34 @@ dt {
     max-width: 1140px;
   }
 }
+
+#toast-container {
+  margin-top: 0rem;
+  &.toast-top-right {
+    top: 0.5rem !important;
+    right: 0.75rem !important;
+  }
+  .toast, .toast-success {
+    margin-top: 0rem;
+    background-image: none !important;
+    background-repeat: no-repeat;
+    background-color: map-get($oil-pastels, 'hi-green');
+    border: none;
+    box-shadow: $box-shadow-3dp;
+    padding-left: 0.5rem;
+    opacity: 1 !important;
+    // padding-right: 0rem;
+  }
+  .toast-close-button {
+    color: black;
+  }
+  .toast-message {
+    color: black;
+    font-family: $strong-font-family;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
 @import "ember-bootstrap/bootstrap";
 @import "pod-styles.scss";

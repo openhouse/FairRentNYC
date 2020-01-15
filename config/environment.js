@@ -61,5 +61,25 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV['ember-toastr'] = {
+    toastrOptions: {
+      closeButton: true,
+      debug: true,
+      newestOnTop: true,
+      progressBar: false,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      onclick: null,
+      showDuration: '300',
+      hideDuration: '1000',
+      timeOut: '400',
+      extendedTimeOut: '1000',
+      showEasing: 'swing',
+      hideEasing: 'linear',
+      showMethod: 'fadeIn',
+      hideMethod: 'fadeOut',
+    },
+  };
+
   return ENV;
 };
