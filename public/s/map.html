@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
   </head>
-  <body class="">
+  <body class="" id="thebody">
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRT8MSP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -108,26 +108,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var ownerData = JSON.parse('{\"base_url\":\"https://nycartc.carto.com\",\"account_type\":\"FREE\"}');
   </script>
   <script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/1.0.0-assets.144/javascripts/common.js"></script>
-<script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/1.0.0-assets.144/javascripts/common_vendor.js"></script>
-<script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/1.0.0-assets.144/javascripts/builder_embed.js"></script>
+  <script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/1.0.0-assets.144/javascripts/common_vendor.js"></script>
+  <script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/1.0.0-assets.144/javascripts/builder_embed.js"></script>
 
   <script>
-    (function () {
-    }());
-  </script>
-  <script>
-    setTimeout(function () {
-      mapView._leafletMap.scrollWheelZoom.disable();
-      mapView._leafletMap.setMinZoom(9);
-      /*
-      mapView._leafletMap.setMaxBounds([
-        [40.494, -73.6972],
-        [40.9176, -74.2584]
-      ]);
-      mapView._leafletMap.panTo([40.70582409,-73.97780021])
-      */
+    window.addEventListener('load', (event) => {
+      var interval = setInterval(function(){
+        if(mapView !== undefined){
+          mapView._leafletMap.scrollWheelZoom.disable();
+          mapView._leafletMap.setMinZoom(9);
+          /*
+          mapView._leafletMap.setMaxBounds([
+            [40.494, -73.6972],
+            [40.9176, -74.2584]
+          ]);
+          mapView._leafletMap.panTo([40.70582409,-73.97780021])
 
-    }, 1000);
+          */
+          clearInterval(interval);
+        }
+      }, 1000);
+
+    });
   </script>
   </body>
 </html>
