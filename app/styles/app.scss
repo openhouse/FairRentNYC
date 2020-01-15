@@ -509,9 +509,15 @@ dt {
     background-repeat: no-repeat;
     background-color: map-get($oil-pastels, 'hi-green');
     border: none;
-    box-shadow: $box-shadow-3dp;
+    box-shadow: $box-shadow-4dp;
     padding-left: 0.5rem;
     opacity: 1 !important;
+    &:hover {
+      box-shadow: $box-shadow-8dp;
+    }
+    &:active {
+      box-shadow: $box-shadow-6dp;
+    }
     // padding-right: 0rem;
   }
   .toast-close-button {

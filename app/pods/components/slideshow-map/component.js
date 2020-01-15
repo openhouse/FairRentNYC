@@ -167,9 +167,10 @@ export default Component.extend({
       currentPhotoIndex = mod(currentPhotoIndex - 1, photosCount);
 
       // currentPhotoIndex = (currentPhotoIndex - 1) % photosCount;
+      /*
       console.log('currentPhotoIndex', currentPhotoIndex);
       console.log('photosCount', photosCount);
-
+      */
       this.set('currentPhotoIndex', currentPhotoIndex);
       this.set('playing', false);
     },
