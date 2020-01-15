@@ -72,7 +72,7 @@ module.exports = function (environment) {
       onclick: null,
       showDuration: '300',
       hideDuration: '1000',
-      timeOut: '400',
+      timeOut: '4000',
       extendedTimeOut: '1000',
       showEasing: 'swing',
       hideEasing: 'linear',
