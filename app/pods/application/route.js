@@ -127,7 +127,8 @@ export default Route.extend({
             name: item.name,
             order: item.order,
             url: item.url,
-            logo: item.logo,
+            hasLogo: item.hasLogo,
+            // logo: item.logo,
           },
         };
         data.push(dataItem);
