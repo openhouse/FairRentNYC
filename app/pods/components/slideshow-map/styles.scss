@@ -38,12 +38,16 @@ $totalHeight: 375px;
     */
   }
     .progress {
-      height: 0.125rem;
+      height: 1px;
       border-radius: 0.25rem 0.25rem 0 0;
       background-color: transparent;
       position: absolute;
       width: 100%;
-      opacity: 1 - 1/$golden-ratio;
+      // opacity: 1/$golden-ratio;
+      opacity: 0.9;
+      .bg-success {
+        background-color: map-get($oil-pastels, 'hi-green') !important;
+      }
     }
     .slideshow-controls {
       color: white;

@@ -1,11 +1,21 @@
 $itemWidth: 6.2rem;
-
+.orgsGridContainer {
+  // padding-top: 1rem;
+  background-image:
+    linear-gradient(to bottom, #dcffc9, #ffffff, #ffd8d4);
+}
 .orgs {
   align-items: top;
   align-content: space-around;
   justify-content: space-evenly;
 }
+  .btn {
+    width: 100%;
+    @media (min-width: 576px) {
+      width: auto;
+    }
 
+  }
   .fit-image {
     border-radius: 0 !important;
     background-size: contain !important;

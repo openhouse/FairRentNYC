@@ -1,15 +1,32 @@
-<GridList @items={{orgsSorted}} class="" as |org|>
-  <GridItem
-    @preview=null
-    @category=null
-    @classNames="grid-item--baseline"
-    @fitImage={{true}}
-    @round={{false}}
-    @name={{org.name}}
-    @href={{org.url}}
-    @src={{org.logo}}
-  >
-    <div class="strong-font text-left line-height all-caps">{{org.name}}</div>
-  </GridItem>
-</GridList>
-{{yield}}
+<div class="box-shadow-3dp orgsGridContainer pt-4 pb-2">
+  <div class="container">
+    <h2 class="strong-font all-caps line-height">Fair Rent NYC Coalition</h2>
+    <h4 class="strong-font all-caps line-height">"Pass Commercial Rent Stabilization"</h4>
+    <div class="text-left pt-3 pb-3">
+      <a
+        href="https://drive.google.com/file/d/1sx7BJ6DKLxD6SI9usWs-ZDcdgFAgrF_8/view?usp=sharing"
+        target="_blank"
+        class="btn btn-primary all-caps strong-font text-white flex-fill"
+        >
+        {{fa-icon "file" inverse=true fixedWidth=true class="pr-1"}}
+        Read Report
+      </a>
+    </div>
+
+  </div>
+  <GridList @items={{orgsSorted}} class="" as |org|>
+    <GridItem
+      @preview=null
+      @category=null
+      @classNames="grid-item--baseline"
+      @fitImage={{true}}
+      @round={{false}}
+      @name={{org.name}}
+      @href={{org.url}}
+      @src={{org.logo}}
+    >
+      <div class="strong-font text-left line-height all-caps">{{org.name}}</div>
+    </GridItem>
+  </GridList>
+  {{yield}}
+</div>
