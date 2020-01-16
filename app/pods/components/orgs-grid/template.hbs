@@ -16,18 +16,20 @@
     </div>
   </div>
   <GridList @items={{orgsSorted}} class="" as |org|>
-    <GridItem
-      @preview=null
-      @category=null
-      @classNames="grid-item--baseline"
-      @fitImage={{true}}
-      @round={{false}}
-      @name={{org.name}}
-      @href={{org.url}}
-      @src={{org.logo}}
-    >
-      <div class="strong-font text-left line-height all-caps">{{org.name}}</div>
-    </GridItem>
+    {{#if org.isActive}}
+      <GridItem
+        @preview=null
+        @category=null
+        @classNames="grid-item--baseline"
+        @fitImage={{true}}
+        @round={{false}}
+        @name={{org.name}}
+        @href={{org.url}}
+        @src={{org.logo}}
+      >
+        <div class="strong-font text-left line-height all-caps">{{org.name}}</div>
+      </GridItem>
+    {{/if}}
   </GridList>
   {{yield}}
 </div>

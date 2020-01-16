@@ -128,6 +128,7 @@ export default Route.extend({
             order: item.order,
             url: item.url,
             hasLogo: item.hasLogo,
+            active: item.active,
             // logo: item.logo,
           },
         };
