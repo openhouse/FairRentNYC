@@ -49,7 +49,7 @@ export default Model.extend({
   }),
 
   tweetUrl: computed('tweetText', function () {
-    return `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.get('tweetText'))}&url=https://FairRentNYC.com&hashtags=FairRentNYC,StopDisplacement`;
+    return `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.get('tweetText'))}&url=http://FairRentNYC.com&hashtags=FairRentNYC,StopDisplacement`;
   }),
 
   sponsorEmailBody: computed('lastName', function () {
