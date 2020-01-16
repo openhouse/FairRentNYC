@@ -20,6 +20,7 @@ module.exports = function (defaults) {
         's/slideshow/tiles',
         's/img/fairrentnyc-og-image-10.jpg',
         'public/s/img/fairrentnyc-og-image-10.jpg',
+        's/logos/orgs/',
 
         //'public/s/graphics/talks-not-raids-preview.jpg'
       ],
