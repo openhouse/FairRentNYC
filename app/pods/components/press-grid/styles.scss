@@ -1,8 +1,9 @@
-$itemWidth: 6.2rem;
+$itemWidth: 10rem; //6.2
 .orgsGridContainer {
   // padding-top: 1rem;
   background-image:
-    linear-gradient(to bottom, #dcffc9, #ffffff, #ffd8d4);
+    linear-gradient(to bottom, #c1eefe, #ffffff);
+    border-top: 1px solid #a3fe72;
 }
 .orgs {
   align-items: top;
@@ -33,6 +34,36 @@ $itemWidth: 6.2rem;
     max-width: $itemWidth !important;
     img {
       max-width: $itemWidth;
+      //max-height: 7rem;
+    }
+  }
+
+  .grid-item--small {
+    // position: relative;
+    // top: 0.75rem;
+    opacity: 0.38;
+    margin-bottom: 1rem;
+  }
+  .grid-item--small, .grid-item--small .fit-image {
+    // max-width: 5rem !important;
+    // max-width: 3rem !important;
+    // width: 3rem !important;
+    // max-height: 4rem !important;
+    // height: 4rem !important;
+
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    .fit-image {
+      width: 4rem;
+      height: 4rem;
+
+      /*
+      max-width: 2rem !important;
+      width: 2rem !important;
+      max-height: 2rem !important;
+      height: 2rem !important;
+      */
+
       //max-height: 7rem;
     }
   }

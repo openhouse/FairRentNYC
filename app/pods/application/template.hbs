@@ -7,7 +7,7 @@
 <br>
 --}}
 <ComptrollerReport />
-<br>
+<PressGrid @preview={{true}} @articles={{model.articles}} />
 <TalkingPoints @sponsorCount={{model.sponsorCount}} class="pb-4" />
 <EmailList class="pb-4" />
 <div class="box-shadow-3dp pastel-border pastel-hi-green pt-3 " style="border-top-width: 1px; border-top-style: solid;">
@@ -15,11 +15,12 @@
   <br>
   <ProgressMap @sponsorCount={{model.sponsorCount}} />
 </div>
-<PhotoSeries @photos={{model.photos}}/>
-
+<div class="pt-3">
+  <PhotoSeries @photos={{model.photos}}/>
+</div>
 <OrgsGrid @orgs={{model.orgs}} />
+<PressGrid @articles={{model.articles}} />
 
 <br>
-<br>
-
+{{footer-info}}
 {{outlet}}

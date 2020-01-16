@@ -1,0 +1,56 @@
+{{#if preview}}
+
+  <div class="">
+    <GridList @items={{articlesSorted}} class="" as |article|>
+      {{#if article.isActive}}
+        {{#if article.isFeatured}}
+          <GridItem
+            @preview=null
+            @category=null
+            @classNames="grid-item--small"
+            @fitImage={{true}}
+            @round={{false}}
+            @name={{article.outlet}}
+            @href={{article.url}}
+            @src={{article.logo}}
+          ></GridItem>
+        {{/if}}
+      {{/if}}
+    </GridList>
+    {{yield}}
+  </div>
+
+
+{{else}}
+
+  <div class="box-shadow-3dp orgsGridContainer pt-4 pb-2">
+    <div class="container">
+      <div class="pl-3 pr-3">
+        <h3 class="all-caps">Press</h3>
+        PRESS CONTACT<br>
+        <b class="all-caps">Email:</b> contact@nycartc.com<br>
+
+
+      </div>
+    </div>
+    <GridList @items={{articlesSorted}} class="" as |article|>
+      {{#if article.isActive}}
+        <GridItem
+          @preview=null
+          @category=null
+          @classNames="grid-item--baseline"
+          @fitImage={{true}}
+          @round={{false}}
+          @name={{article.outlet}}
+          @href={{article.url}}
+          @src={{article.logo}}
+        >
+          <div class="strong-font text-left all-caps">{{article.outlet}}</div>
+          <div class=" text-left">{{article.text}}</div>
+        </GridItem>
+      {{/if}}
+    </GridList>
+    {{yield}}
+  </div>
+
+{{/if}}

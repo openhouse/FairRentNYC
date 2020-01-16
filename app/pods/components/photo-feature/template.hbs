@@ -6,20 +6,21 @@
 {{!--
 {{feature.photoLink}}
 --}}
-<div class="quote">
-  <span class="primary-font-family oversize pr-1">“</span><span class="d-sm-none">{{photo.quoteXs}}</span><span class="d-none d-sm-inline d-md-none">{{photo.quoteSm}}</span><span class="d-none d-md-inline">{{photo.quoteMd}}</span><span class="oversize pl-1">”</span>
-</div>
+<div class="pr-2 pl-2">
+  <div class="quote">
+    <span class="primary-font-family oversize pr-1">“</span><span class="d-sm-none">{{photo.quoteXs}}</span><span class="d-none d-sm-inline d-md-none">{{photo.quoteSm}}</span><span class="d-none d-md-inline">{{photo.quoteMd}}</span><span class="oversize pl-1">”</span>
+  </div>
 
-{{#if photo.quoteName}}
-  <div class="person"><i>{{photo.quoteName}}{{#if photo.businessName}}, {{photo.businessName}}{{/if}}</i></div>
-{{/if}}
-{{!--
-<div class="pastel-text pastel-white text-left">Share:</div>
-<div class="share">{{
-  social-share
-  message=false
-  fbLink=feature.fbLink
-  twitterLink=feature.twitterLink
-}}</div>
+  {{#if photo.quoteName}}
+    <div class="person"><i>{{photo.quoteName}}{{#if photo.businessName}}, {{photo.businessName}}{{/if}}</i></div>
+  {{/if}}
+  <div class="pastel-text pastel-white text-left">Share:</div>
+  <div class="share">{{
+    social-share
+    message=false
+    fbLink=feature.fbLink
+    twitterLink=feature.twitterLink
+  }}</div>
+</div>
 {{yield}}
---}}
+

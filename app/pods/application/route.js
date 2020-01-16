@@ -134,6 +134,23 @@ export default Route.extend({
         data.push(dataItem);
       });
 
+      results.sheets.articles.forEach((item)=> {
+        let dataItem = {
+          type: 'article',
+          id: item.id,
+          attributes: {
+            order: item.order,
+            url: item.url,
+            outlet: item.outlet,
+            text: item.text,
+            featured: item.featured,
+            active: item.active,
+            hasLogo: item.hasLogo,
+          },
+        };
+        data.push(dataItem);
+      });
+
       store.push({
         data: data,
       });
@@ -142,6 +159,7 @@ export default Route.extend({
         photos: store.peekAll('photo'),
         districts: store.peekAll('district'),
         orgs: store.peekAll('org'),
+        articles: store.peekAll('article'),
         sponsorCount: results.sheets.sponsorhoods.length,
       };
 
