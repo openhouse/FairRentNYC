@@ -21,3 +21,14 @@
   border-radius: 1rem / $golden-ratio;
 
 }
+
+
+.linkCopiedContainer {
+  text-align: right;
+  margin-right: 3rem;
+  .linkCopied {
+    position: absolute;
+    margin-top: 0.25rem;
+  }
+}
+

@@ -1,0 +1,9 @@
+.btn {
+  color: white;
+  text-shadow: $text-shadow-1dp--dark;
+  border: 0;
+  &:hover, &:active {
+    text-shadow: none;
+    box-shadow: $box-shadow-1dp;
+  }
+}

@@ -1,0 +1,9 @@
+<CopyButton
+ @clipboardText="http://FairRentNYC.com"
+ @success={{action "copyLink"}}
+ title="copy to clipboard"
+ class="btn btn-outline-primary"
+>
+  {{fa-icon "sign-out" rotate=270 size=""}}
+</CopyButton>
+{{yield}}
