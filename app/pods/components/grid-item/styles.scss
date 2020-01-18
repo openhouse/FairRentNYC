@@ -53,3 +53,9 @@ a:hover, a:active {
 .name {
   max-width: 8.25rem;
 }
+
+.not-loaded {
+  .fit-image {
+    background-image: none !important;
+  }
+}

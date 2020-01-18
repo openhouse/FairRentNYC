@@ -81,5 +81,23 @@ module.exports = function (environment) {
     },
   };
 
+  ENV.viewportConfig = {
+    /*
+    viewportEnabled: true,
+    viewportUseRAF: true,
+    viewportSpy: false,
+    viewportScrollSensitivity: 1,
+    viewportRefreshRate: 100,
+    viewportListeners: [],
+    intersectionThreshold: 0,
+    scrollableArea: null,
+    */
+    viewportTolerance: {
+      top: 0,
+      left: 0,
+      bottom: 320,
+      right: 0,
+    },
+  };
   return ENV;
 };

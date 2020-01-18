@@ -1,4 +1,9 @@
 import Component from '@ember/component';
+import InViewportMixin from 'ember-in-viewport';
 
-export default Component.extend({
+export default Component.extend(InViewportMixin, {
+  lazyLoadClass: 'not-loaded',
+  didEnterViewport() {
+    this.set('lazyLoadClass', 'loaded');
+  },
 });
