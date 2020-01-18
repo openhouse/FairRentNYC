@@ -92,7 +92,7 @@ export default Model.extend({
     if (isPresent(cssY)) {
       return cssY;
     } else {
-      return 62;
+      return 57;
     }
   }),
 
