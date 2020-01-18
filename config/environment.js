@@ -95,7 +95,7 @@ module.exports = function (environment) {
     viewportTolerance: {
       top: 0,
       left: 0,
-      bottom: 320,
+      bottom: 1000,
       right: 0,
     },
   };
