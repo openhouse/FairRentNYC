@@ -43,6 +43,12 @@ export default Model.extend({
   /*
   COMPUTED PROPERTIES
   */
+  //
+  cdn9Url: computed('sizes.9.source', function () {
+    return `https://res.cloudinary.com/nycartc/image/fetch/q_auto,f_auto/${this.get('sizes.9.source')}`;
+  }),
+
+
 
   // responsive quote text
   quoteMd: computed('rawQuoteMd', function () {

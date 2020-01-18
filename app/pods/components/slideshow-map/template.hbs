@@ -5,7 +5,7 @@
       <div
         class="slideshow"
         style="
-          background-image: url({{photo.sizes.[9].source}});
+          background-image: url({{photo.cdn9Url}});
           background-position: 50% 50%;
         "
         >
@@ -139,7 +139,7 @@
 </div>
 {{!-- preload images--}}
 <div class="d-none">
-  <img src={{nextPhoto.sizes.[9].source}}>
+  <img src={{nextPhoto.cdn9Url}}>
   <img src={{nextPhoto.district.remotePhotoUrl300}}>
   {{currentPhotoIndex}}
 </div>
