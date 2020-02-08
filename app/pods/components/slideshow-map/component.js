@@ -59,7 +59,7 @@ export default Component.extend({
 
   scoredPhotos: computed('scoredPhotosSortedAlternating.[]', function () {
     let photos = this.get('scoredPhotosSortedAlternating');
-    let shortIndex = Math.floor(photos.get('length') * 0.381966011250145) - 1;
+    let shortIndex = Math.floor(photos.get('length') * 0.381966011250145) + 39;
 
     let output = [photos[shortIndex]];
     output = output.concat(photos.slice(0, shortIndex - 0));
