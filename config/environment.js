@@ -26,6 +26,7 @@ module.exports = function (environment) {
       hostWhitelist: [
         'fairrentnyc.com',
         'fairrentnyc.nycartc.com',
+        'fairrentnyc.nycartc.com:443',
         '192.168.0.7:4200',
         '172.20.10.10:4200',
         '172.20.10.2:4200',
