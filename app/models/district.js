@@ -1,6 +1,6 @@
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-import { notEmpty, alias } from '@ember/object/computed';
+import DS from "ember-data";
+import { computed } from "@ember/object";
+import { notEmpty, alias } from "@ember/object/computed";
 const { Model, attr, hasMany, belongsTo } = DS;
 
 export default Model.extend({
@@ -25,36 +25,44 @@ export default Model.extend({
   photoUrl: attr(),
 
   // RELATIONSHIPS
-  photos: hasMany('photo'),
-  sponsorhood: belongsTo('sponsorhood'),
+  photos: hasMany("photo"),
+  sponsorhood: belongsTo("sponsorhood"),
 
   // COMPUTED PROPERTIES
-  isSponsor: notEmpty('sponsorhood.order'),
-  sponsorOrder: alias('sponsorhood.order'),
+  isSponsor: notEmpty("sponsorhood.order"),
+  sponsorOrder: alias("sponsorhood.order"),
 
-  remotePhotoUrl300: computed('remotePhotoUrl', function () {
-    return `https://res.cloudinary.com/nycartc/image/fetch/w_300,h_300,c_fill,g_face/${this.get('remotePhotoUrl')}`;
+  remotePhotoUrl300: computed("remotePhotoUrl", function() {
+    return `https://res.cloudinary.com/nycartc/image/fetch/w_300,h_300,c_fill,g_face/${encodeURIComponent(
+      this.get("remotePhotoUrl")
+    )}`;
   }),
 
-  name: computed('firstName', 'lastName', function () {
-    return `${this.get('firstName')} ${this.get('lastName')}`;
+  name: computed("firstName", "lastName", function() {
+    return `${this.get("firstName")} ${this.get("lastName")}`;
   }),
 
-  tweetText: computed('twitterHandle', 'isSponsor', function () {
-    if (this.get('isSponsor')) {
-      return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable diverse neighborhoods @NYCCouncil @NYCArtC`;
+  tweetText: computed("twitterHandle", "isSponsor", function() {
+    if (this.get("isSponsor")) {
+      return `RENT closes NYC spaces. @${this.get(
+        "twitterHandle"
+      )}: PASS Commercial Rent Stabilization Bill 1796 for affordable diverse neighborhoods @NYCCouncil @NYCArtC`;
     } else {
-      return `RENT closes NYC spaces. @${this.get('twitterHandle')}: PASS Commercial Rent Stabilization Bill 1796 for affordable diverse neighborhoods @NYCCouncil @NYCArtC`;
+      return `RENT closes NYC spaces. @${this.get(
+        "twitterHandle"
+      )}: PASS Commercial Rent Stabilization Bill 1796 for affordable diverse neighborhoods @NYCCouncil @NYCArtC`;
     }
   }),
 
-  tweetUrl: computed('tweetText', function () {
-    return `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.get('tweetText'))}&url=http://FairRentNYC.com&hashtags=FairRentNYC,StopDisplacement`;
+  tweetUrl: computed("tweetText", function() {
+    return `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      this.get("tweetText")
+    )}&url=http://FairRentNYC.com&hashtags=FairRentNYC,StopDisplacement`;
   }),
 
-  sponsorEmailBody: computed('lastName', function () {
+  sponsorEmailBody: computed("lastName", function() {
     let message = `
-Council Member ${this.get('lastName')},
+Council Member ${this.get("lastName")},
 
 Too many important neighborhood places are closing due to rent increases. We lose neighborhood culture.
 
@@ -70,9 +78,9 @@ Thank you`;
     return message.trim();
   }),
 
-  nonSponsorEmailBody: computed('lastName', function () {
+  nonSponsorEmailBody: computed("lastName", function() {
     let message = `
-Council Member ${this.get('lastName')},
+Council Member ${this.get("lastName")},
 
 Too many important neighborhood places are closing due to rent increases. We lose neighborhood culture.
 
@@ -86,20 +94,28 @@ Thank you`;
     return message.trim();
   }),
 
-  emailUrl: computed('isSponsor', 'sponsorEmailBody', 'nonSponsorEmailBody', 'email', function () {
-    let email = this.get('email');
-    let subject = '';
-    let body = '';
-    if (this.get('isSponsor')) {
-      subject = 'Pass #FairRentNYC Commercial Rent Stabilization Bill #1796';
-      body = this.get('sponsorEmailBody');
-    } else {
-      subject = 'Sponsor #FairRentNYC Commercial Rent Stabilization Bill #1796';
-      body = this.get('nonSponsorEmailBody');
+  emailUrl: computed(
+    "isSponsor",
+    "sponsorEmailBody",
+    "nonSponsorEmailBody",
+    "email",
+    function() {
+      let email = this.get("email");
+      let subject = "";
+      let body = "";
+      if (this.get("isSponsor")) {
+        subject = "Pass #FairRentNYC Commercial Rent Stabilization Bill #1796";
+        body = this.get("sponsorEmailBody");
+      } else {
+        subject =
+          "Sponsor #FairRentNYC Commercial Rent Stabilization Bill #1796";
+        body = this.get("nonSponsorEmailBody");
+      }
+
+      let url = `mailto:${email}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      return url;
     }
-
-    let url = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    return url;
-  }),
-
+  )
 });

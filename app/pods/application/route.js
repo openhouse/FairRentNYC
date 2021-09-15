@@ -13,9 +13,12 @@ export default Route.extend({
     let store = this.get("store");
     let sponsorDistricts = this.get("sponsorDistricts");
     let promises = {
+      /*
       districts: fetch(
         "/council-districts/district_data/cm_master_file_no_geo.json"
       ),
+      */
+      districts: fetch("/s/districts.json"),
       sheets: fetch("/s/sheets.json")
     };
 
