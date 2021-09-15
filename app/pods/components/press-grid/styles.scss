@@ -1,9 +1,9 @@
 $itemWidth: 10rem; //6.2
+$itemSmWidth: 6.2rem;
 .orgsGridContainer {
   // padding-top: 1rem;
-  background-image:
-    linear-gradient(to bottom, #c1eefe, #ffffff);
-    border-top: 1px solid #a3fe72;
+  background-image: linear-gradient(to bottom, #c1eefe, #ffffff);
+  border-top: 1px solid #a3fe72;
 }
 .orgs {
   align-items: top;
@@ -11,63 +11,61 @@ $itemWidth: 10rem; //6.2
   justify-content: space-evenly;
   padding-left: 0 !important;
   padding-right: 0 !important;
-
 }
-  .btn {
-    width: 100%;
-    @media (min-width: 576px) {
-      width: auto;
-    }
-
+.btn {
+  width: 100%;
+  @media (min-width: 576px) {
+    width: auto;
   }
+}
+.fit-image {
+  border-radius: 0 !important;
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  max-width: $itemWidth - (2 * 0.3819660113rem) !important;
+  max-height: $itemWidth !important;
+}
+
+.grid-item--baseline {
+  max-width: $itemWidth !important;
+  img {
+    max-width: $itemWidth;
+    //max-height: 7rem;
+  }
+}
+
+.grid-item--small {
+  // position: relative;
+  // top: 0.75rem;
+  opacity: 0.38;
+  margin-bottom: 1rem;
+}
+.grid-item--small,
+.grid-item--small .fit-image {
+  // max-width: 5rem !important;
+  // max-width: 3rem !important;
+  // width: 3rem !important;
+  // max-height: 4rem !important;
+  // height: 4rem !important;
+
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   .fit-image {
-    border-radius: 0 !important;
-    background-size: contain !important;
-    background-repeat: no-repeat;
-    background-position: center center;
-    max-width: $itemWidth - (2 * 0.3819660113rem) !important;
-    max-height: $itemWidth !important;
+    // width: 4rem;
+    height: 4rem;
 
-  }
-
-  .grid-item--baseline {
-    max-width: $itemWidth !important;
-    img {
-      max-width: $itemWidth;
-      //max-height: 7rem;
-    }
-  }
-
-  .grid-item--small {
-    // position: relative;
-    // top: 0.75rem;
-    opacity: 0.38;
-    margin-bottom: 1rem;
-  }
-  .grid-item--small, .grid-item--small .fit-image {
-    // max-width: 5rem !important;
-    // max-width: 3rem !important;
-    // width: 3rem !important;
-    // max-height: 4rem !important;
-    // height: 4rem !important;
-
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-    .fit-image {
-      width: 4rem;
-      height: 4rem;
-
-      /*
+    /*
       max-width: 2rem !important;
       width: 2rem !important;
       max-height: 2rem !important;
       height: 2rem !important;
       */
 
-      //max-height: 7rem;
-    }
+    //max-height: 7rem;
   }
+}
 
-  .name {
-    padding-top: 0.25rem;
-  }
+.name {
+  padding-top: 0.25rem;
+}

@@ -35,21 +35,46 @@
     </div>
     <GridList @items={{articlesSorted}} class="" as |article|>
       {{#if article.isActive}}
-        <GridItem
-          @preview=null
-          @category=null
-          @classNames="grid-item--baseline"
-          @fitImage={{true}}
-          @round={{false}}
-          @name={{article.outlet}}
-          @href={{article.url}}
-          @src={{article.logo}}
-        >
-          <div class="strong-font text-left all-caps">{{article.outlet}}</div>
-          <div class=" text-left">{{article.text}}</div>
-        </GridItem>
+        {{#if article.isFeatured}}
+          <GridItem
+            @preview=null
+            @category=null
+            @classNames="grid-item--baseline"
+            @fitImage={{true}}
+            @round={{false}}
+            @name={{article.outlet}}
+            @href={{article.url}}
+            @src={{article.logo}}
+          >
+            <div class="strong-font text-left all-caps">{{article.outlet}}</div>
+            <div class=" text-left">{{article.title}}</div>
+          </GridItem>
+        {{/if}}
       {{/if}}
     </GridList>
+    <GridList @items={{articlesSorted}} class="" as |article|>
+      {{#if article.isActive}}
+        {{#unless article.isFeatured}}
+          <GridItem
+            @preview=null
+            @category=null
+            @classNames="grid-item--baseline grid-item--small text-center"
+            @fitImage={{true}}
+            @round={{false}}
+            @name={{article.outlet}}
+            @href={{article.url}}
+            @src={{article.logo}}
+          >
+            {{!-- <div class="strong-font text-left all-caps">{{article.outlet}}</div>
+             <div class=" text-left">{{article.text}}</div> --}}
+            <div class=" text-center">
+              {{article.outlet}}
+            </div>
+          </GridItem>
+        {{/unless}}
+      {{/if}}
+    </GridList>
+
     {{yield}}
   </div>
 

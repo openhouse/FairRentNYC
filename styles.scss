@@ -1,0 +1,22 @@
+& {
+  padding-top: 20px;
+  margin-top:20px;
+  // background-color: black;
+  color: black;
+  margin-bottom: 20px;
+  // border-top: 1px map-get($oil-pastels, 'gray-2') dotted;
+}
+
+
+a {
+
+
+  &:link, &:visited, &:hover, &:active {
+    color: black;
+    text-decoration: none;
+  }
+
+  &:hover, &:active {
+    color: map-get($oil-pastels, 'hi-pink');
+  }
+}
