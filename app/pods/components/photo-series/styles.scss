@@ -1,6 +1,6 @@
 & {
   background-color: white;
-  padding-top: 1rem;
+  // padding-top: 1rem;
   padding-bottom: 1rem;
   // margin-top: 20px;
   margin-bottom: 1rem;
@@ -10,18 +10,16 @@
 }
 
 .photo-feature {
-  padding-bottom: 1rem * $golden-ratio;
-  border-bottom: solid 1px map-get($oil-pastels, 'white');
-  margin-bottom: 1rem * $golden-ratio;
+  padding-top: 1rem * $golden-ratio;
+  border-top: solid 1px map-get($oil-pastels, "white");
+  margin-top: 1rem * $golden-ratio;
 }
 
 .photo {
   max-width: 640px;
   width: 100%;
   border-radius: 1rem / $golden-ratio;
-
 }
-
 
 .linkCopiedContainer {
   text-align: right;
@@ -31,4 +29,3 @@
     margin-top: 0.25rem;
   }
 }
-

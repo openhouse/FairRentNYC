@@ -1,34 +1,11 @@
 & {
-  // z-index: -1000;
   position: relative;
-  /*
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(254, 225, 212, 0),
-      rgba(254, 225, 212, 1),
-      rgba(254, 225, 212, 1),
-      rgba(254, 225, 212, 1),
-      rgba(254, 225, 212, 1),
-      rgba(254, 225, 212, 1),
-      rgba(254, 225, 212, 1),
-    );
-  */
-  /*
-  background-image:
-    linear-gradient(to bottom, rgba(254, 225, 212, 0) 0%,
-    rgba(254, 225, 212, 1) 12.5%,
-    rgba(254, 225, 212, 1) 25%,
-    #d2efff 100%/$golden-ratio,
-    #c7ffc8 100%);
-    */
-
-  background-image:
-    linear-gradient(to bottom, rgba(254, 225, 212, 0) 0%,
+  background-image: linear-gradient(
+    to bottom,
+    map-get($oil-pastels, "pale-orange"),
     #d1f0ff,
-    #caffc0);
-
-
+    #caffc0
+  );
 }
 // 0.75rem 1.25rem
 .img-background-wrapper {
@@ -38,124 +15,95 @@
   @media (min-width: 576px) {
     top: -3rem;
   }
-  /*
-  @media (min-width: 768px) {
-    top: -3rem;
-  }
-  @media (min-width: 992px) {
-    top: -3rem;
+}
+.img-background {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0),
+      rgba(209, 240, 255, 1- 1 / $golden-ratio)
+    ),
+    url("/s/meeting-1200.jpg");
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1 / $golden-ratio),
+    transparent
+  );
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 12.5rem;
+  width: 100%;
+  position: absolute;
+  opacity: 100% - 100% / $golden-ratio;
+  @media (min-width: 576px) {
+    height: 11.5rem;
   }
   @media (min-width: 1200px) {
-    top: -3rem;
+    height: 12rem;
   }
-  */
-
 }
-  .img-background {
-    /*
-    background-image:
-      linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),
-      url('/s/meeting-1200.jpg');
-    */
-    background-image:
-      // linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1- 1/$golden-ratio), rgba(255, 255, 255, 0)),
 
-      linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0), rgba(209, 240, 255, 1- 1/$golden-ratio)),
-      // linear-gradient(to bottom, rgba(254, 225, 212, 0), rgba(255, 255, 255, 1)),
-      url('/s/meeting-1200.jpg');
-
-    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1/$golden-ratio), transparent );
-
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 12.5rem;
-    width: 100%;
-    position: absolute;
-    opacity: 100% - 100%/$golden-ratio;
-    /*
-    @media (min-width: 576px) {
-      height: 8rem;
-    }
-    */
-    @media (min-width: 576px) {
-      height: 11.5rem;
-    }
-    /*
-    @media (min-width: 768px) {
-      height: 11.5rem;
-    }
-
-    @media (min-width: 992px) {
-      height: 11.5rem;
-    }
-    */
-    @media (min-width: 1200px) {
-      height: 12rem;
-    }
-
-  }
 .card {
   border: 0px;
   /*
   background-image:
     linear-gradient(to bottom, rgba(252, 249, 75, 1/$golden-ratio), rgba(255, 255, 255, 1/$golden-ratio) 10rem);
   background-color: transparent;*/
-  background-color: rgba(255, 255, 255, 1/$golden-ratio);
+  background-color: rgba(255, 255, 255, 1 / $golden-ratio);
 }
-  .list-group-item {
-    padding: 0;
-    border: 0;
-    background: none;
+.list-group-item {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.item-right {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 1.25rem;
+  padding-left: 0.5rem;
+}
 
+.item-left {
+  text-align: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex: 0 0 4rem;
+  vertical-align: middle;
+  align-items: center;
+
+  img {
+    max-width: 100%;
   }
-    .item-right {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
-      padding-right: 1.25rem;
-      padding-left: 0.5rem;
-    }
+}
+.item-left-inner {
+  padding-left: 1rem;
+  padding-right: 0.75rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+  max-width: 4rem;
+  overflow: visible;
+}
 
-    .item-left {
-      text-align: center;
-      display: flex;
-      padding: 0;
-      margin: 0;
-      flex: 0 0 4rem;
-      vertical-align: middle;
-      align-items: center;
-
-      img {
-        max-width: 100%;
-      }
-    }
-      .item-left-inner {
-        padding-left: 1rem;
-        padding-right: 0.75rem;
-        text-align: center;
-        display: block;
-        width: 100%;
-        max-width: 4rem;
-        overflow: visible;
-      }
-
-      .speech-bg {
-        background-image: url('/s/chhaya-200s-o.jpg');
-        height: 100%;
-        background-size: cover;
-        background-position: center center;
-        border-radius: 0 0.25rem 0.25rem 0;
-        @media (min-width: 576px) {
-          border-radius: 0.25rem;
-        }
-
-      }
-
-  .card-header{
-    background-color: transparent;
-    border: 0px;
-    color: black;
-    // text-shadow: $text-shadow-1dp;
+.speech-bg {
+  background-image: url("/s/chhaya-200s-o.jpg");
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 0 0.25rem 0.25rem 0;
+  @media (min-width: 576px) {
+    border-radius: 0.25rem;
   }
+}
+
+.card-header {
+  background-color: transparent;
+  border: 0px;
+  color: black;
+  // text-shadow: $text-shadow-1dp;
+}

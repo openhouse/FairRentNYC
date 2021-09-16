@@ -12,14 +12,14 @@
 <PressGrid @preview={{true}} @articles={{model.articles}} />
  --}}
 <br>
-<TalkingPoints @sponsorCount={{model.sponsorCount}} class="pb-4" />
 <EmailList class="pb-4" />
-<div class="box-shadow-3dp pastel-border pastel-hi-green pt-3 " style="border-top-width: 1px; border-top-style: solid;">
+<TalkingPoints @sponsorCount={{model.sponsorCount}} class="pb-4" />
+<div class=" pastel-border pastel-hi-green pt-3 " style="border-top-width: 1px; border-top-style: solid;">
   <SponsorGrid @districts={{model.districts}} />
   <br>
   <ProgressMap @sponsorCount={{model.sponsorCount}} />
 </div>
-<div class="pt-3">
+<div class="">
   <PhotoSeries @photos={{model.photos}}/>
 </div>
 <PressGrid @articles={{model.articles}} />
