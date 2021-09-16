@@ -86,3 +86,8 @@ a.white-text {
 .bg-black {
   background-color: black;
 }
+
+.notifications {
+  position: relative;
+  z-index: 1000;
+}
