@@ -175,7 +175,7 @@ export default Route.extend({
   title: "Fair Rent NYC - Pass Commercial Rent Stabilization Bill 1796",
   project: "Fair Rent NYC - Pass Commercial Rent Stabilization Bill 1796",
   description:
-    "Rent closes NYC spaces. Pass #FairRentNYC Commercial Rent Stabilization for diverse affordable neighborhoods.",
+    "Rent closes NYC spaces. Pass Commercial Rent Stabilization for #FairRentNYC.",
   // canonical: 'http://fairrentnyc.nycartc.com',
   canonical: "https://fairrentnyc.nycartc.com",
   host: "https://fairrentnyc.nycartc.com",
