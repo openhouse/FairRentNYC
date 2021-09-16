@@ -2,8 +2,12 @@ $itemWidth: 10rem; //6.2
 $itemSmWidth: 6.2rem;
 .orgsGridContainer {
   // padding-top: 1rem;
-  background-image: linear-gradient(to bottom, #c1eefe, #ffffff);
-  border-top: 1px solid #a3fe72;
+  background-image: linear-gradient(
+    to bottom,
+    #c1eefe,
+    rgba(193, 238, 254, 0.38)
+  );
+  // border-top: 1px solid #a3fe72;
 }
 .orgs {
   align-items: top;

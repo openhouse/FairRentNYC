@@ -28,7 +28,7 @@
       <div class="pl-3 pr-3">
         <h3 class="all-caps">Press</h3>
         PRESS CONTACT<br>
-        <b class="all-caps">Email:</b> contact@nycartc.com<br>
+        <b class="all-caps">Email:</b> <a target="_blank" class="text-black" href="mailto:contact@nycartc.com">contact@nycartc.com</a><br>
 
 
       </div>
@@ -46,8 +46,8 @@
             @href={{article.url}}
             @src={{article.logo}}
           >
-            <div class="strong-font text-left all-caps">{{article.outlet}}</div>
-            <div class=" text-left">{{article.title}}</div>
+            <div class="strong-font text-center all-caps">{{article.outlet}}</div>
+            <div class=" text-left small">{{article.text}}</div>
           </GridItem>
         {{/if}}
       {{/if}}
