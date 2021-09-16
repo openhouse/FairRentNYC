@@ -10,7 +10,7 @@ export default Model.extend({
   url: attr(),
   outlet: attr(),
   text: attr(),
-  title: attr(),
+  // title: attr(),
   featured: attr(),
   active: attr(),
   hasLogo: attr(),
