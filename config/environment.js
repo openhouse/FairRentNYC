@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-module.exports = function (environment) {
+module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'fairrentnyc',
+    modulePrefix: "fairrentnyc",
     environment,
-    rootURL: '/',
-    locationType: 'auto',
-    podModulePrefix: 'fairrentnyc/pods',
+    rootURL: "/",
+    locationType: "auto",
+    podModulePrefix: "fairrentnyc/pods",
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -14,8 +14,8 @@ module.exports = function (environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false,
-      },
+        Date: false
+      }
     },
 
     APP: {
@@ -24,21 +24,21 @@ module.exports = function (environment) {
     },
     fastboot: {
       hostWhitelist: [
-        'fairrentnyc.com',
-        'fairrentnyc.nycartc.com',
-        'fairrentnyc.nycartc.com:443',
-        '192.168.0.7:4200',
-        '172.20.10.10:4200',
-        '172.20.10.2:4200',
-        '192.168.1.137:4200',
-        'dev51.nycartc.com',
-        /^localhost:\d+$/,
-      ],
-    },
-
+        "fairrentnyc.com",
+        "fairrentnyc.nycartc.com",
+        "fairrentnyc.nycartc.com:443",
+        "192.168.0.7:4200",
+        "172.20.10.10:4200",
+        "172.20.10.2:4200",
+        "192.168.1.137:4200",
+        "dev51.nycartc.com",
+        "fairrentstaging.nycartc.com",
+        /^localhost:\d+$/
+      ]
+    }
   };
 
-  if (environment === 'development') {
+  if (environment === "development") {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -46,40 +46,40 @@ module.exports = function (environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
-  if (environment === 'test') {
+  if (environment === "test") {
     // Testem prefers this...
-    ENV.locationType = 'none';
+    ENV.locationType = "none";
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.rootElement = "#ember-testing";
     ENV.APP.autoboot = false;
   }
 
-  if (environment === 'production') {
+  if (environment === "production") {
     // here you can enable a production-specific feature
   }
 
-  ENV['ember-toastr'] = {
+  ENV["ember-toastr"] = {
     toastrOptions: {
       closeButton: true,
       debug: false,
       newestOnTop: true,
       progressBar: false,
-      positionClass: 'toast-top-right',
+      positionClass: "toast-top-right",
       preventDuplicates: true,
       onclick: null,
-      showDuration: '300',
-      hideDuration: '1000',
-      timeOut: '4000',
-      extendedTimeOut: '1000',
-      showEasing: 'swing',
-      hideEasing: 'linear',
-      showMethod: 'fadeIn',
-      hideMethod: 'fadeOut',
-    },
+      showDuration: "300",
+      hideDuration: "1000",
+      timeOut: "4000",
+      extendedTimeOut: "1000",
+      showEasing: "swing",
+      hideEasing: "linear",
+      showMethod: "fadeIn",
+      hideMethod: "fadeOut"
+    }
   };
 
   ENV.viewportConfig = {
@@ -97,8 +97,8 @@ module.exports = function (environment) {
       top: 0,
       left: 0,
       bottom: 1000,
-      right: 0,
-    },
+      right: 0
+    }
   };
   return ENV;
 };
