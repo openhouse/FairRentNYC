@@ -28,5 +28,13 @@ export default Model.extend({
     }
 
     return null;
+  }),
+
+  logoLight: computed("id", "hasLogo", function() {
+    if (isPresent(this.get("hasLogo"))) {
+      return `/s/logos/press/color--ao/${this.get("id")}-light.png`;
+    }
+
+    return null;
   })
 });

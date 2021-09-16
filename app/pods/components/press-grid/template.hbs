@@ -1,6 +1,6 @@
 {{#if preview}}
 
-  <div class="">
+  <div class="press-grid--preview">
     <GridList @items={{articlesSorted}} class="" as |article|>
       {{#if article.isActive}}
         {{#if article.isFeatured}}
@@ -12,8 +12,10 @@
             @round={{false}}
             @name={{article.outlet}}
             @href={{article.url}}
-            @src={{article.logo}}
-          ></GridItem>
+            @src={{article.logoLight}}
+          >
+            <div class="strong-font text-center all-caps">{{article.outlet}}</div>
+          </GridItem>
         {{/if}}
       {{/if}}
     </GridList>
