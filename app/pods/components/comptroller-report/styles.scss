@@ -1,19 +1,24 @@
+& {
+  background-color: black;
+  color: white;
+}
 .card {
   border: 0;
   background: transparent;
 }
 
-  img {
-    width: 5rem;
-  }
+img {
+  width: 5rem;
+}
 
-  .list-group-item {
-    border: 0;
-    background: transparent;
+.list-group-item {
+  border: 0;
+  background: transparent;
+}
+a {
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: map-get($oil-pastels, "hi-pink");
   }
-  a {
-    &:hover, &:active {
-      text-decoration: none;
-      color: map-get($oil-pastels, 'hi-pink');
-    }
-  }
+}

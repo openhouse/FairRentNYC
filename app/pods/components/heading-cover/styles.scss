@@ -74,6 +74,15 @@
   z-index: 100;
   box-shadow: $box-shadow-2dp;
 }
+.black-text,
 a.black-text {
   color: black;
+}
+.white-text,
+a.white-text {
+  color: white;
+}
+
+.bg-black {
+  background-color: black;
 }

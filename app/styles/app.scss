@@ -1,16 +1,19 @@
-@import 'oil-pastels';
-@import 'material-shadows';
+@import "oil-pastels";
+@import "material-shadows";
 
 /*
   CONSTANTS
 */
 $golden-ratio: 1.61803398875;
+$gr-62: 1 / $golden-ratio;
+$gr-38: 1 - $gr-62;
+
 .gr-opacity {
-  opacity: 1/$golden-ratio;
+  opacity: $gr-62;
 }
 
 // $identity-color: #57ccf7;
-$identity-color: map-get($oil-pastels, 'hi-pink');
+$identity-color: map-get($oil-pastels, "hi-pink");
 
 $identity-color-dark: #3ba3c9;
 $identity-color-light: #c9f0ff;
@@ -21,12 +24,12 @@ $identity-color-light: #d3edf7;
 */
 @font-face {
   font-family: "Arial Black";
-  src: url('/s/fonts/Arial-Black.otf');
+  src: url("/s/fonts/Arial-Black.otf");
   font-display: swap;
 }
 @font-face {
   font-family: round-book;
-  src: url('/s/fonts/round-book.otf');
+  src: url("/s/fonts/round-book.otf");
   font-display: swap;
 }
 
@@ -54,35 +57,31 @@ $identity-color-light: #d3edf7;
 */
 @font-face {
   font-family: headline;
-  src: url('/s/fonts/TradeGothicLTPro-Bold.eot?') format('eot'),
-      url("/s/fonts/TradeGothicLTPro-Bold.woff2") format("woff2"),
-      url("/s/fonts/TradeGothicLTPro-Bold.woff") format("woff"),
-      url('/s/fonts/TradeGothicLTPro-Bold.ttf') format('truetype');
+  src: url("/s/fonts/TradeGothicLTPro-Bold.eot?") format("eot"),
+    url("/s/fonts/TradeGothicLTPro-Bold.woff2") format("woff2"),
+    url("/s/fonts/TradeGothicLTPro-Bold.woff") format("woff"),
+    url("/s/fonts/TradeGothicLTPro-Bold.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: headline-narrow;
-  src: url('/s/fonts/TradeGothic-BoldCondTwenty.eot?') format('eot'),
-      url("/s/fonts/TradeGothic-BoldCondTwenty.woff") format("woff"),
-      url('/s/fonts/TradeGothic-BoldCondTwenty.ttf') format('truetype');
+  src: url("/s/fonts/TradeGothic-BoldCondTwenty.eot?") format("eot"),
+    url("/s/fonts/TradeGothic-BoldCondTwenty.woff") format("woff"),
+    url("/s/fonts/TradeGothic-BoldCondTwenty.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: headline-narrow-light;
-  src: url('/s/fonts/trade-gothic-condensed.ttf') format('truetype');
+  src: url("/s/fonts/trade-gothic-condensed.ttf") format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: headline-light;
-  src: url('/s/fonts/Trade-Gothic-LT.ttf') format('truetype');
+  src: url("/s/fonts/Trade-Gothic-LT.ttf") format("truetype");
   font-display: swap;
 }
-
-
-
-
 
 /*
   BOOSTRAP OVERRIDES
@@ -100,13 +99,14 @@ $brand-font-family: geometric-book, -apple-system,system-ui,BlinkMacSystemFont,"
 $active-font-family:  'Arial Black', 'Arial Bold', Arial-BoldMT, Gadget, sans-serif;
 */
 
-
 // $NAC-font-family: Geometric-Black;
 // $NAC-bold-font-family: Geometric-Bold;
 $book-font-family: round-book;
 $strong-font-family: headline, "Trebuchet MS", Helvetica, sans-serif;
-$strong-narrow-font-family: headline-narrow, "Trebuchet MS", Helvetica, sans-serif;
-$light-narrow-font-family: headline-narrow-light, "Trebuchet MS", Helvetica, sans-serif;
+$strong-narrow-font-family: headline-narrow, "Trebuchet MS", Helvetica,
+  sans-serif;
+$light-narrow-font-family: headline-narrow-light, "Trebuchet MS", Helvetica,
+  sans-serif;
 $light-font-family: headline-light, "Trebuchet MS", Helvetica, sans-serif;
 
 $font-family-sans-serif: $book-font-family;
@@ -114,10 +114,8 @@ $primary-font-family: round-book;
 $brand-font-family-black: $strong-font-family;
 $primary-font-family-bold: $strong-font-family;
 
-
-
-
-.btn-primary, .btn.btn-primary {
+.btn-primary,
+.btn.btn-primary {
   // font-family: $primary-font-family-bold;
   background-color: #fe3d89;
 
@@ -125,7 +123,9 @@ $primary-font-family-bold: $strong-font-family;
     background-color: #fe1772;
     border-color: #fe0a6a;
   }
-  &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active, .show > &.dropdown-toggle {
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
     background-color: #fe0a6a;
     border-color: #fa0163;
   }
@@ -158,67 +158,76 @@ $primary-font-family-bold: $strong-font-family;
   font-weight: 100 !important;
 }
 
-
-
-
-
-
-
 b {
   font-family: $strong-font-family;
   font-weight: normal !important;
 }
 
-$blue:    map-get($oil-pastels, 'blue');
+$blue: map-get($oil-pastels, "blue");
 // $blue:    #20696d;
 
-$indigo:  map-get($oil-pastels, 'violet');
-$purple:  map-get($oil-pastels, 'hyacinth-violet');
-$pink:    map-get($oil-pastels, 'hi-pink');
-$red:     map-get($oil-pastels, 'rose-madder');
-$orange:  map-get($oil-pastels, 'yellow-orange');
-$yellow:  map-get($oil-pastels, 'chrome-yellow');
-$green:   map-get($oil-pastels, 'yellow-green');
-$teal:    map-get($oil-pastels, 'pale-green');
-$cyan:    map-get($oil-pastels, 'blue-green');
+$indigo: map-get($oil-pastels, "violet");
+$purple: map-get($oil-pastels, "hyacinth-violet");
+$pink: map-get($oil-pastels, "hi-pink");
+$red: map-get($oil-pastels, "rose-madder");
+$orange: map-get($oil-pastels, "yellow-orange");
+$yellow: map-get($oil-pastels, "chrome-yellow");
+$green: map-get($oil-pastels, "yellow-green");
+$teal: map-get($oil-pastels, "pale-green");
+$cyan: map-get($oil-pastels, "blue-green");
 
-$gray-100: map-get($oil-pastels, 'white');
-$gray-200: mix(map-get($oil-pastels, 'white'), map-get($oil-pastels, 'gray-2'), $weight:75%);
-$gray-300: mix(map-get($oil-pastels, 'white'), map-get($oil-pastels, 'gray-2'), $weight:50%);
-$gray-400: mix(map-get($oil-pastels, 'white'), map-get($oil-pastels, 'gray-2'), $weight:25%);
-$gray-500: map-get($oil-pastels, 'gray-2');
-$gray-600: map-get($oil-pastels, 'deep-gray');
-$gray-700: map-get($oil-pastels, 'dark-gray');
-$gray-800: mix(map-get($oil-pastels, 'dark-gray'), map-get($oil-pastels, 'black'));
-$gray-900: map-get($oil-pastels, 'black');
+$gray-100: map-get($oil-pastels, "white");
+$gray-200: mix(
+  map-get($oil-pastels, "white"),
+  map-get($oil-pastels, "gray-2"),
+  $weight: 75%
+);
+$gray-300: mix(
+  map-get($oil-pastels, "white"),
+  map-get($oil-pastels, "gray-2"),
+  $weight: 50%
+);
+$gray-400: mix(
+  map-get($oil-pastels, "white"),
+  map-get($oil-pastels, "gray-2"),
+  $weight: 25%
+);
+$gray-500: map-get($oil-pastels, "gray-2");
+$gray-600: map-get($oil-pastels, "deep-gray");
+$gray-700: map-get($oil-pastels, "dark-gray");
+$gray-800: mix(
+  map-get($oil-pastels, "dark-gray"),
+  map-get($oil-pastels, "black")
+);
+$gray-900: map-get($oil-pastels, "black");
 
-$body-bg: map-get($oil-pastels, 'white');
+$body-bg: map-get($oil-pastels, "white");
 $body-bg: white;
 
 // $body-color: map-get($oil-pastels, 'black');
 // $body-color: white;
 $body-color: black;
 
-$primary:       $pink !default;
+$primary: $pink !default;
 // $primary:       #94d9d5;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
 // $info:          $gray-800;
 // $info:          #5e5f61;
 // $info:          #94d9d5;
 // $info:          $gray-900;
-$info:          $blue;
-$warning:       $orange !default;
-$danger:        $red !default;
-$danger:        #db1836;
+$info: $blue;
+$warning: $orange !default;
+$danger: $red !default;
+$danger: #db1836;
 // $light:         $gray-100 !default;
 // $dark:          $gray-800 !default;
 // $light:         white;
 
-$dark:          $blue !default;
+$dark: $blue !default;
 
-$light:         $gray-100 !default;
+$light: $gray-100 !default;
 
 /*
   UTILITIES
@@ -235,15 +244,22 @@ $light:         $gray-100 !default;
 }
 
 .decoration-none {
-  &, &a:link, &a:visited, &a:hover, &a:active, a:link, a:visited, a:hover, a:active {
+  &,
+  &a:link,
+  &a:visited,
+  &a:hover,
+  &a:active,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
     text-decoration: none !important;
   }
   text-decoration: none !important;
-
 }
 
 .white-mid-gradient {
-  background: linear-gradient(white, white, rgba(255,255,255,0)) !important;
+  background: linear-gradient(white, white, rgba(255, 255, 255, 0)) !important;
   background-repeat: no-repeat;
 }
 
@@ -284,13 +300,16 @@ dt {
 }
 
 .thumbnail-card {
-  a>& {
-    &:link, &:visited, &:hover, &:active {
+  a > & {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
       text-decoration: none !important;
     }
-
   }
-  &:hover, &:active {
+  &:hover,
+  &:active {
     .thumbnail-card-right {
       opacity: 0.85;
     }
@@ -318,20 +337,19 @@ dt {
     background-position: center center;
     // width: 4rem;
     width: 50px;
-    color: rgba(255,255,255, 0);
+    color: rgba(255, 255, 255, 0);
     /*
     border-bottom-right-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
     */
-
   }
 }
 
 .hover-underline--wrapper {
   text-decoration: none !important;
-  &:hover, &:active {
+  &:hover,
+  &:active {
     .hover-underline--target {
-
       text-decoration: underline !important;
     }
   }
@@ -343,13 +361,13 @@ dt {
   border-color: transparent !important;
   box-shadow: none !important;
 
- .jumbotron & {
-   position: relative;
-   top: -1em;
-   @media (min-width: 576px) {
-     top: inherit;
-   }
- }
+  .jumbotron & {
+    position: relative;
+    top: -1em;
+    @media (min-width: 576px) {
+      top: inherit;
+    }
+  }
 }
 
 .all-caps {
@@ -361,7 +379,7 @@ dt {
   color: $identity-color-dark !important;
   background-color: transparent !important;
   border: none !important;
-  &:focus{
+  &:focus {
     // box-shadow: 0 0 0 0.2rem map-get($oil-pastels, 'hi-blue') !important;
     box-shadow: none !important;
   }
@@ -370,8 +388,7 @@ dt {
   box-shadow: $box-shadow-3dp;
 }
 .modal {
-  color: map-get($oil-pastels, 'black') ;
-
+  color: map-get($oil-pastels, "black");
 }
 .modal-footer {
   display: none !important;
@@ -386,13 +403,14 @@ dt {
   fill: black;
 }
 
-.comma-seperated-list{
+.comma-seperated-list {
   padding: 0;
   margin: 0;
   display: inline;
   a {
     color: white;
-    &:hover, &:active {
+    &:hover,
+    &:active {
       color: black;
       text-decoration: none;
       // opacity: 1/ $golden-ratio;
@@ -403,18 +421,21 @@ dt {
     display: inline;
     // white-space: nowrap;
     &:after {
-      content: ' • ';
+      content: " • ";
     }
     &:last-child:after {
-      content: '';
+      content: "";
     }
   }
 }
 
-.nowrap {white-space:nowrap;}
+.nowrap {
+  white-space: nowrap;
+}
 
-.preview{
-  a, .name {
+.preview {
+  a,
+  .name {
     color: white !important;
   }
   .grid-item__line2 {
@@ -426,7 +447,8 @@ dt {
 }
 
 .grid-list--white {
-  a, .name {
+  a,
+  .name {
     color: white !important;
   }
 }
@@ -443,16 +465,13 @@ dt {
   object-position: 50% 38%;
 }
 
-
-
 .signup-fade {
-  background-image:
-    linear-gradient(
-        rgba(255,255,255,0.85),
-        rgba(255,255,255,0.62),
-        rgba(255,255,255,1),
-      ),
-      url('/s/photos/CabaretLawRepeal-crop-06.jpg');
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.62),
+      rgba(255, 255, 255, 1)
+    ),
+    url("/s/photos/CabaretLawRepeal-crop-06.jpg");
   background-size: cover;
   background-position: 62% top;
   background-repeat: no-repeat;
@@ -474,7 +493,6 @@ dt {
     width: (25rem * $golden-ratio) !important;
     // max-width: (25rem * $golden-ratio) !important;
   }
-
 }
 
 .container--wide {
@@ -503,11 +521,12 @@ dt {
     top: 0.5rem !important;
     right: 0.75rem !important;
   }
-  .toast, .toast-success {
+  .toast,
+  .toast-success {
     margin-top: 0rem;
     background-image: none !important;
     background-repeat: no-repeat;
-    background-color: map-get($oil-pastels, 'hi-green');
+    background-color: map-get($oil-pastels, "hi-green");
     border: none;
     box-shadow: $box-shadow-4dp;
     padding-left: 0.5rem;

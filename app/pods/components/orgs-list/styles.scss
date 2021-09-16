@@ -1,0 +1,19 @@
+& {
+  background-color: black;
+  color: white;
+}
+a:link,
+a:visited {
+  color: white;
+}
+a:hover,
+a:active {
+  color: $identity-color;
+}
+
+.dot {
+  opacity: $gr-38;
+  &:last-of-type {
+    display: none;
+  }
+}
