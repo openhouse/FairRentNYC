@@ -12,7 +12,7 @@
   },
   "scripts": {
     "install": "napa NewYorkCityCouncil/districts:council-districts",
-    "build": "ember build",
+    "build": "ember build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
@@ -71,6 +71,6 @@
     "toastr": "^2.1.4"
   },
   "engines": {
-    "node": "12.18.3"
+    "node": "12.18.2"
   }
 }
