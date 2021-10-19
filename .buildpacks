@@ -1,2 +1,2 @@
-heroku/nodejs
+https://github.com/heroku/heroku-buildpack-nodejs#latest
 https://github.com/heroku/heroku-buildpack-static.git
