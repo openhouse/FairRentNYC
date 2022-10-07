@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "scripts": {
-    "install": "napa ssh://github.com/NewYorkCityCouncil/districts:council-districts",
+    "install": "napa https://github.com/NewYorkCityCouncil/districts.git:council-districts",
     "build": "ember build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
