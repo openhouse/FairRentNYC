@@ -70,7 +70,7 @@
     "sass": "^1.23.7",
     "toastr": "^2.1.4"
   },
-  "jengines": {
+  "engines": {
     "node": "12.18.2"
   }
 }
