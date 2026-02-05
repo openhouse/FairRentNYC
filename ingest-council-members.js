@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { log } = console;
-const rawData = require("./node_modules/council-districts/district_data/cm_master_file_no_geo.json");
+const rawData = require("./data/council-districts/district_data/cm_master_file_no_geo.json");
 
 let data = [];
 
