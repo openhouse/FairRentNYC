@@ -19,12 +19,12 @@ export default Route.extend({
       ),
       */
       districts: fetch("/s/districts.json"),
-      sheets: fetch("/s/sheets.json")
+      sheets: fetch("/s/sheets.json"),
     };
 
-    return hash(promises).then(function(results) {
+    return hash(promises).then(function (results) {
       let data = [];
-      results.districts.forEach(district => {
+      results.districts.forEach((district) => {
         district.photoUrl = `/s/city-council/district-${district.district}.jpg`;
         delete district.council_member.committees;
         let dataItem = {
@@ -48,13 +48,13 @@ export default Route.extend({
             phone1: district.council_member.PersonPhone,
             email: district.council_member.PersonEmail,
             phone2: district.council_member.PersonPhone2,
-            photoUrl: district.photoUrl
-          }
+            photoUrl: district.photoUrl,
+          },
         };
         data.push(dataItem);
       });
 
-      results.sheets.photos.forEach(photo => {
+      results.sheets.photos.forEach((photo) => {
         let dataItem = {
           type: "photo",
           id: photo.flickrId,
@@ -86,43 +86,43 @@ export default Route.extend({
             display: photo.display,
             testimonial: photo.testimonial,
             testimonialRank: photo.testimonialRank,
-            quoteName: photo.nameOfQuotePerson
-          }
+            quoteName: photo.nameOfQuotePerson,
+          },
         };
         if (isPresent(photo.district)) {
           dataItem.relationships = {
             district: {
               data: {
                 type: "district",
-                id: photo.district
-              }
-            }
+                id: photo.district,
+              },
+            },
           };
         }
 
         data.push(dataItem);
       });
 
-      results.sheets.sponsorhoods.forEach(item => {
+      results.sheets.sponsorhoods.forEach((item) => {
         let dataItem = {
           type: "sponsorhood",
           id: item.id,
           attributes: {
-            order: item.order
+            order: item.order,
           },
           relationships: {
             district: {
               data: {
                 type: "district",
-                id: item.district
-              }
-            }
-          }
+                id: item.district,
+              },
+            },
+          },
         };
         data.push(dataItem);
       });
 
-      results.sheets.orgs.forEach(item => {
+      results.sheets.orgs.forEach((item) => {
         let dataItem = {
           type: "org",
           id: item.id,
@@ -131,14 +131,14 @@ export default Route.extend({
             order: item.order,
             url: item.url,
             hasLogo: item.hasLogo,
-            active: item.active
+            active: item.active,
             // logo: item.logo,
-          }
+          },
         };
         data.push(dataItem);
       });
 
-      results.sheets.articles.forEach(item => {
+      results.sheets.articles.forEach((item) => {
         let dataItem = {
           type: "article",
           id: item.id,
@@ -150,14 +150,14 @@ export default Route.extend({
             title: item.title,
             featured: item.featured,
             active: item.active,
-            hasLogo: item.hasLogo
-          }
+            hasLogo: item.hasLogo,
+          },
         };
         data.push(dataItem);
       });
 
       store.push({
-        data: data
+        data: data,
       });
 
       return {
@@ -165,7 +165,7 @@ export default Route.extend({
         districts: store.peekAll("district"),
         orgs: store.peekAll("org"),
         articles: store.peekAll("article"),
-        sponsorCount: results.sheets.sponsorhoods.length
+        sponsorCount: results.sheets.sponsorhoods.length,
       };
 
       // return results;
@@ -181,25 +181,25 @@ export default Route.extend({
   host: "https://fairrentnyc.com",
   image: "/s/img/fairrentnyc-og-image-10.jpg",
 
-  headTags: Ember.computed("title", function() {
+  headTags: Ember.computed("title", function () {
     let tags = [];
     tags.push({
       type: "title",
       tagId: "title-tag",
-      content: this.get("title")
+      content: this.get("title"),
     });
     tags.push({
       type: "description",
       tagId: "description-tag",
-      content: this.get("description")
+      content: this.get("description"),
     });
 
     tags.push({
       type: "link",
       tagId: "link-canonical-tag",
       attrs: {
-        href: this.get("canonical")
-      }
+        href: this.get("canonical"),
+      },
     });
 
     tags.push({
@@ -207,8 +207,8 @@ export default Route.extend({
       tagId: "meta-fb-app_id-tag",
       attrs: {
         property: "fb:app_id",
-        content: "1534813103259735"
-      }
+        content: "1534813103259735",
+      },
     });
 
     tags.push({
@@ -216,48 +216,48 @@ export default Route.extend({
       tagId: "meta-og-locale-tag",
       attrs: {
         property: "og:locale",
-        content: "en_US"
-      }
+        content: "en_US",
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-og-type-tag",
       attrs: {
         property: "og:type",
-        content: "website"
-      }
+        content: "website",
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-og-title-tag",
       attrs: {
         property: "og:title",
-        content: this.get("project")
-      }
+        content: this.get("project"),
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-og-description-tag",
       attrs: {
         property: "og:description",
-        content: this.get("description")
-      }
+        content: this.get("description"),
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-og-url-tag",
       attrs: {
         property: "og:url",
-        content: this.get("canonical")
-      }
+        content: this.get("canonical"),
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-og-site_name-tag",
       attrs: {
         property: "og:site_name",
-        content: this.get("title")
-      }
+        content: this.get("title"),
+      },
     });
 
     tags.push({
@@ -265,32 +265,32 @@ export default Route.extend({
       tagId: "meta-og-image-tag",
       attrs: {
         property: "og:image",
-        content: `${this.get("host")}${this.get("image")}`
-      }
+        content: `${this.get("host")}${this.get("image")}`,
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-og-image-width-tag",
       attrs: {
         property: "og:image:width",
-        content: 1200
-      }
+        content: 1200,
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-og-image-height-tag",
       attrs: {
         property: "og:image:height",
-        content: 630
-      }
+        content: 630,
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-twitter-image-tag",
       attrs: {
         name: "twitter:image",
-        content: `${this.get("host")}${this.get("image")}`
-      }
+        content: `${this.get("host")}${this.get("image")}`,
+      },
     });
 
     tags.push({
@@ -298,16 +298,16 @@ export default Route.extend({
       tagId: "meta-twitter-card-tag",
       attrs: {
         name: "twitter:card",
-        content: "summary_large_image"
-      }
+        content: "summary_large_image",
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-twitter-site-tag",
       attrs: {
         name: "twitter:site",
-        content: "@NYCArtC"
-      }
+        content: "@NYCArtC",
+      },
     });
 
     tags.push({
@@ -315,26 +315,26 @@ export default Route.extend({
       tagId: "meta-twitter-creator-tag",
       attrs: {
         name: "twitter:creator",
-        content: "@NYCArtC"
-      }
+        content: "@NYCArtC",
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-twitter-title-tag",
       attrs: {
         name: "twitter:title",
-        content: this.get("project")
-      }
+        content: this.get("project"),
+      },
     });
     tags.push({
       type: "meta",
       tagId: "meta-twitter-description-tag",
       attrs: {
         name: "twitter:description",
-        content: this.get("description")
-      }
+        content: this.get("description"),
+      },
     });
 
     return tags;
-  })
+  }),
 });

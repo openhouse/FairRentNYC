@@ -28,8 +28,7 @@ module.exports = function (environment) {
         "https://fairrentnyc.us8.list-manage.com/subscribe/post",
       u: process.env.MAILCHIMP_U || "50d4a2015424bbdee5cbe8d8a",
       id: process.env.MAILCHIMP_ID || "bd71c9de32",
-      botFieldName:
-        process.env.MAILCHIMP_BOT_FIELD || "b_name",
+      botFieldName: process.env.MAILCHIMP_BOT_FIELD || "b_name",
       fallbackUrl:
         process.env.MAILCHIMP_FALLBACK_URL ||
         "https://fairrentnyc.us8.list-manage.com/subscribe?u=50d4a2015424bbdee5cbe8d8a&id=bd71c9de32",
@@ -46,6 +45,8 @@ module.exports = function (environment) {
         "fairrentnyc.com",
         "fairrentnyc.nycartc.com",
         "fairrentnyc.nycartc.com:443",
+        "fairrentnyc-2026.fairrentnyc.com",
+        "staging-2026.fairrentnyc.com",
         "192.168.0.7:4200",
         "172.20.10.10:4200",
         "172.20.10.2:4200",
