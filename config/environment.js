@@ -36,7 +36,10 @@ module.exports = function (environment) {
         process.env.MAILCHIMP_SUCCESS_MESSAGE ||
         "Thanks for joining! Please check your email to confirm your subscription.",
     },
-    eventRsvpUrl: process.env.EVENT_RSVP_URL || "#join",
+    eventRsvpUrl:
+      process.env.EVENT_RSVP_URL ||
+      "https://www.instagram.com/p/DUV8FuVkQ1g/" ||
+      "#join",
     fastboot: {
       hostWhitelist: [
         "fairrentnyc.com",
