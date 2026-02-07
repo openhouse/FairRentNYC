@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: "fairrentnyc",
     environment,
@@ -14,8 +14,8 @@ module.exports = function(environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+        Date: false,
+      },
     },
 
     APP: {
@@ -34,9 +34,12 @@ module.exports = function(environment) {
       fallbackUrl: process.env.MAILCHIMP_FALLBACK_URL || "",
       successMessage:
         process.env.MAILCHIMP_SUCCESS_MESSAGE ||
-        "Thanks for joining! Please check your email to confirm your subscription."
+        "Thanks for joining! Please check your email to confirm your subscription.",
     },
-    eventRsvpUrl: process.env.EVENT_RSVP_URL || "#join",
+    eventRsvpUrl:
+      process.env.EVENT_RSVP_URL ||
+      "https://www.instagram.com/p/DUV8FuVkQ1g/" ||
+      "#join",
     fastboot: {
       hostWhitelist: [
         "fairrentnyc.com",
@@ -46,11 +49,12 @@ module.exports = function(environment) {
         "172.20.10.10:4200",
         "172.20.10.2:4200",
         "192.168.1.137:4200",
+        "192.168.0.11:4200",
         "dev51.nycartc.com",
         "fairrentstaging.nycartc.com",
-        /^localhost:\d+$/
-      ]
-    }
+        /^localhost:\d+$/,
+      ],
+    },
   };
 
   if (environment === "development") {
@@ -93,8 +97,8 @@ module.exports = function(environment) {
       showEasing: "swing",
       hideEasing: "linear",
       showMethod: "fadeIn",
-      hideMethod: "fadeOut"
-    }
+      hideMethod: "fadeOut",
+    },
   };
 
   ENV.viewportConfig = {
@@ -112,8 +116,8 @@ module.exports = function(environment) {
       top: 0,
       left: 0,
       bottom: 1000,
-      right: 0
-    }
+      right: 0,
+    },
   };
   return ENV;
 };
