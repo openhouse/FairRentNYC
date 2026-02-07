@@ -22,6 +22,21 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    mailchimp: {
+      actionUrl:
+        process.env.MAILCHIMP_ACTION_URL ||
+        "https://nycartc.us15.list-manage.com/subscribe/post?u=ca17765434e079491a7d7da04&id=628c56d813",
+      u: process.env.MAILCHIMP_U || "ca17765434e079491a7d7da04",
+      id: process.env.MAILCHIMP_ID || "628c56d813",
+      botFieldName:
+        process.env.MAILCHIMP_BOT_FIELD ||
+        "b_ca17765434e079491a7d7da04_4692a2946a",
+      fallbackUrl: process.env.MAILCHIMP_FALLBACK_URL || "",
+      successMessage:
+        process.env.MAILCHIMP_SUCCESS_MESSAGE ||
+        "Thanks for joining! Please check your email to confirm your subscription."
+    },
+    eventRsvpUrl: process.env.EVENT_RSVP_URL || "#join",
     fastboot: {
       hostWhitelist: [
         "fairrentnyc.com",
