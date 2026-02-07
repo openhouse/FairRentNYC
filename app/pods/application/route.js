@@ -177,8 +177,8 @@ export default Route.extend({
   description:
     "Rent closes NYC spaces. Pass Commercial Rent Stabilization for #FairRentNYC.",
   // canonical: 'http://fairrentnyc.nycartc.com',
-  canonical: "https://fairrentnyc.nycartc.com",
-  host: "https://fairrentnyc.nycartc.com",
+  canonical: "https://fairrentnyc.com",
+  host: "https://fairrentnyc.com",
   image: "/s/img/fairrentnyc-og-image-10.jpg",
 
   headTags: Ember.computed("title", function() {
