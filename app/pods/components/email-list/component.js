@@ -13,11 +13,13 @@ export default Component.extend({
     'Email signups are being updated. Please check back soon.',
   isMailchimpConfigured: computed(
     'mailchimpActionUrl',
-    'mailchimpBotFieldName',
+    'mailchimpU',
+    'mailchimpId',
     function() {
       return (
         Boolean(this.get('mailchimpActionUrl')) &&
-        Boolean(this.get('mailchimpBotFieldName'))
+        Boolean(this.get('mailchimpU')) &&
+        Boolean(this.get('mailchimpId'))
       );
     }
   )

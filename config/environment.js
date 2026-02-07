@@ -25,13 +25,14 @@ module.exports = function (environment) {
     mailchimp: {
       actionUrl:
         process.env.MAILCHIMP_ACTION_URL ||
-        "https://nycartc.us15.list-manage.com/subscribe/post?u=ca17765434e079491a7d7da04&id=628c56d813",
-      u: process.env.MAILCHIMP_U || "ca17765434e079491a7d7da04",
-      id: process.env.MAILCHIMP_ID || "628c56d813",
+        "https://fairrentnyc.us8.list-manage.com/subscribe/post",
+      u: process.env.MAILCHIMP_U || "50d4a2015424bbdee5cbe8d8a",
+      id: process.env.MAILCHIMP_ID || "bd71c9de32",
       botFieldName:
-        process.env.MAILCHIMP_BOT_FIELD ||
-        "b_ca17765434e079491a7d7da04_4692a2946a",
-      fallbackUrl: process.env.MAILCHIMP_FALLBACK_URL || "",
+        process.env.MAILCHIMP_BOT_FIELD || "b_name",
+      fallbackUrl:
+        process.env.MAILCHIMP_FALLBACK_URL ||
+        "https://fairrentnyc.us8.list-manage.com/subscribe?u=50d4a2015424bbdee5cbe8d8a&id=bd71c9de32",
       successMessage:
         process.env.MAILCHIMP_SUCCESS_MESSAGE ||
         "Thanks for joining! Please check your email to confirm your subscription.",
