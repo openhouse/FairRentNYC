@@ -1,0 +1,60 @@
+<section id={{@era.anchorId}} class="timeline-era-section" aria-label="Archive section">
+  <EraStickyHeader @years={{@era.years}} @headline={{@era.headline}} />
+
+  <div class="container pt-3 pb-2">
+    <p class="small mb-2"><b>{{@era.archiveLabel}}</b></p>
+    <p class="mb-0">{{@era.summary}}</p>
+  </div>
+
+  {{#if isLegacyEra}}
+    <SlideshowMap @photos={{@model.photos}} />
+
+    <PressGrid @articles={{@model.articles}} @preview={{true}} />
+
+    <OrgsList @orgs={{@model.orgs}} />
+
+    <ComptrollerReport />
+    <br>
+    <EmailList class="pb-4" />
+    <TalkingPoints @sponsorCount={{@model.sponsorCount}} class="pb-4" />
+    <div class="pastel-border pastel-hi-green pt-3" style="border-top-width: 1px; border-top-style: solid;">
+      <div class="container pb-2"><small><b>As of {{@era.years}}</b></small></div>
+      <SponsorGrid @districts={{@model.districts}} />
+      <br>
+      <ProgressMap @sponsorCount={{@model.sponsorCount}} />
+    </div>
+    <div>
+      <PhotoSeries @photos={{@model.photos}} />
+    </div>
+    <PressGrid @articles={{@model.articles}} />
+    <div class="container pb-2"><small><b>As of {{@era.years}}</b></small></div>
+    <OrgsGrid @orgs={{@model.orgs}} />
+  {{else}}
+    <div class="container py-3">
+      <BillTrackRow @tracks={{@era.billTracks}} @isArchived={{true}} />
+
+      <h4 class="strong-font all-caps mt-3">Press (as of {{@era.years}})</h4>
+      <ul>
+        {{#each @era.pressLinks as |item|}}
+          <li><a href={{item.url}} target="_blank" rel="noopener noreferrer">{{item.outlet}} — {{item.title}}</a></li>
+        {{/each}}
+      </ul>
+
+      <h4 class="strong-font all-caps mt-3">Coalition (as of {{@era.years}})</h4>
+      <ul>
+        {{#each @era.coalitionLinks as |item|}}
+          <li><a href={{item.url}} target="_blank" rel="noopener noreferrer">{{item.name}}</a></li>
+        {{/each}}
+      </ul>
+
+      {{#if hasArtifacts}}
+        <h4 class="strong-font all-caps mt-3">Archive artifacts</h4>
+        <ul>
+          {{#each @era.artifacts as |item|}}
+            <li><a href={{item.url}} target="_blank" rel="noopener noreferrer">{{item.date}} · {{item.type}} · {{item.title}}</a></li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </div>
+  {{/if}}
+</section>

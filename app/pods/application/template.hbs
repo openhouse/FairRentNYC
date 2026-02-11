@@ -1,33 +1,3 @@
 {{head-layout}}
-<HeadingCover />
-<SlideshowMap @photos={{model.photos}} />
-
-<PressGrid @articles={{model.articles}} @preview={{true}} />
-
-<OrgsList @orgs={{model.orgs}} />
-
-{{!--
-<OrgsReport @orgs={{model.orgs}} />
-<br>
---}}
-<ComptrollerReport />
-{{!--
-<PressGrid @preview={{true}} @articles={{model.articles}} />
- --}}
-<br>
-<EmailList class="pb-4" />
-<TalkingPoints @sponsorCount={{model.sponsorCount}} class="pb-4" />
-<div class=" pastel-border pastel-hi-green pt-3 " style="border-top-width: 1px; border-top-style: solid;">
-  <SponsorGrid @districts={{model.districts}} />
-  <br>
-  <ProgressMap @sponsorCount={{model.sponsorCount}} />
-</div>
-<div class="">
-  <PhotoSeries @photos={{model.photos}}/>
-</div>
-<PressGrid @articles={{model.articles}} />
-<OrgsGrid @orgs={{model.orgs}} />
-
-<br>
-{{footer-info}}
+<TimelinePage @model={{model}} />
 {{outlet}}

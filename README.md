@@ -33,6 +33,23 @@ You will need the following things properly installed on your computer.
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 * If Watchman is unavailable, use polling: `EMBER_CLI_DISABLE_WATCHMAN=1 ember serve`
 
+
+### Timeline data model (2026 living archive)
+
+The homepage is now rendered from `app/data/timeline.js`:
+
+* Add/edit timeline eras by updating objects in the exported array.
+* `isPresentEra: true` renders the top "current campaign" block (no sticky era header).
+* Historical eras render with sticky headers via `EraSection` + `EraStickyHeader`.
+* To add a second bill (parallel track) in any era, append another object to that era
+  `billTracks` array. `BillTrackRow` will render all tracks without template duplication.
+
+Current composition:
+
+* `TimelinePage` (`app/pods/components/timeline-page/*`)
+* `EraSection` (`app/pods/components/era-section/*`)
+* `BillTrackRow` (`app/pods/components/bill-track-row/*`)
+
 ### Mailchimp configuration
 
 The signup form uses build-time environment variables (see `config/environment.js`):

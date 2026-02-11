@@ -1,0 +1,22 @@
+<div class="bill-track-row row">
+  {{#each @tracks as |track|}}
+    <div class="col-12 col-md-6 mb-3 d-flex align-items-stretch">
+      <div class="card box-shadow-1dp w-100">
+        <div class="card-body d-flex flex-column">
+          <small class="all-caps text-muted">{{track.jurisdiction}} · {{track.chamber}}</small>
+          <h4 class="strong-font mt-1 mb-1">{{track.billNumber}}</h4>
+          <p class="mb-2">{{track.shortTitle}}</p>
+          <p class="mb-3"><small>{{track.statusText}}</small></p>
+          {{#if @isArchived}}
+            <p class="small text-muted mb-2"><b>Archived action record:</b> links below are retained as historical references.</p>
+          {{/if}}
+          <div class="mt-auto">
+            {{#each track.ctas as |cta|}}
+              <a href={{cta.url}} target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm mr-1 mb-1">{{cta.label}}</a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
