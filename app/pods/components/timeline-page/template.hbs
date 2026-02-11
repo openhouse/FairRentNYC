@@ -1,0 +1,18 @@
+<HeadingCover />
+
+<section id={{presentEra.anchorId}} class="timeline-present-section pastel-border pastel-hi-green" aria-label="Present day campaign">
+  <div class="container pt-4 pb-4">
+    <h2 class="strong-font all-caps mb-1">{{presentEra.years}}</h2>
+    <h3 class="strong-font mb-2">{{presentEra.headline}}</h3>
+    <p class="mb-3">{{presentEra.summary}}</p>
+    <BillTrackRow @tracks={{presentEra.billTracks}} @isArchived={{false}} />
+  </div>
+  <EmailList class="pb-4" />
+</section>
+
+{{#each archivedEras as |era|}}
+  <EraSection @era={{era}} @model={{@model}} />
+{{/each}}
+
+{{footer-info}}
+{{yield}}
