@@ -28,7 +28,7 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `ember serve`
+* `npm run start:dev` (or `ember serve`)
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 * If Watchman is unavailable, use polling: `EMBER_CLI_DISABLE_WATCHMAN=1 ember serve`
@@ -71,19 +71,19 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
+* `npm start` (run FastBoot server from built `dist/`)
 
 ### Deploying (Dokku)
 
-This app uses the Node + static buildpack flow so Dokku builds the Ember app
-and serves `/dist` as a static site.
+This app now deploys as a Node/FastBoot service so SSR is active in production
+for SEO + social crawlers.
 
 1) Create a staging app:
 
 ```
 dokku apps:create fairrent-staging
 dokku buildpacks:set fairrent-staging https://github.com/heroku/heroku-buildpack-nodejs.git
-dokku buildpacks:add fairrent-staging https://github.com/heroku/heroku-buildpack-static.git
-dokku config:set fairrent-staging NPM_CONFIG_PRODUCTION=false NODE_ENV=production \
+dokku config:set fairrent-staging NODE_ENV=production \
   MAILCHIMP_ACTION_URL=... MAILCHIMP_U=... MAILCHIMP_ID=... EVENT_RSVP_URL=...
 ```
 
@@ -100,8 +100,8 @@ git push dokku-staging feature/2026:master
 dokku logs -t fairrent-staging
 ```
 
-Repeat the same steps for production (swap app name + config values). Ensure
-`static.json` points to the built `dist/` directory.
+Repeat the same steps for production (swap app name + config values). The
+runtime process is `npm start`, which launches `fastboot-server.js`.
 
 ## Further Reading / Useful Links
 
