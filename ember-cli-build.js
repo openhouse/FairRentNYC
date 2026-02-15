@@ -4,7 +4,10 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const Funnel = require('broccoli-funnel');
 
 module.exports = function (defaults) {
+  const isCI = Boolean(process.env.CI);
+
   let app = new EmberApp(defaults, {
+    hinting: isCI,
     'ember-bootstrap': {
       bootstrapVersion: 4,
       importBootstrapFont: false,
