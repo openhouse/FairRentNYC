@@ -57,7 +57,7 @@
     "ember-leaflet": "^4.0.2",
     "ember-load-initializers": "^2.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-oil-pastels": "git+https://github.com/openhouse/ember-oil-pastels.git#07cbd12fff782d17c3586f93e0bafa98a42419aa",
+    "ember-oil-pastels": "https://codeload.github.com/openhouse/ember-oil-pastels/tar.gz/07cbd12fff782d17c3586f93e0bafa98a42419aa",
     "ember-qunit": "^4.4.1",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.12.0",
