@@ -12,12 +12,13 @@
   },
   "scripts": {
     "install": "node scripts/fetch-council-districts.js",
-    "build": "ember build --environment=production",
+    "build": "ember fastboot:build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "node fastboot-server.js",
     "test": "ember test",
-    "start:dev": "ember serve"
+    "start:dev": "ember serve",
+    "build:browser": "ember build --environment=production"
   },
   "devDependencies": {
     "@ember/jquery": "^0.6.0",
@@ -72,9 +73,11 @@
     "toastr": "^2.1.4"
   },
   "engines": {
-    "node": "12.18.2"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "dependencies": {
     "fastboot-app-server": "^4.1.4"
-  }
+  },
+  "packageManager": "npm@10"
 }
