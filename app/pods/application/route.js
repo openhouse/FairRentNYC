@@ -1,17 +1,15 @@
 import Route from "@ember/routing/route";
-import store from "@ember-data/store";
 import fetch from "ember-fetch/ajax";
 import { inject as service } from "@ember/service";
 import { hash } from "rsvp";
+import { computed } from "@ember/object";
 import { isPresent } from "@ember/utils";
 
 export default Route.extend({
   store: service(),
 
-  model(params) {
-    let self = this;
+  model() {
     let store = this.get("store");
-    let sponsorDistricts = this.get("sponsorDistricts");
     let promises = {
       /*
       districts: fetch(
@@ -83,7 +81,6 @@ export default Route.extend({
             borough: photo.borough,
             neighborhood: photo.neighborhood,
             cssY: photo.cssY,
-            display: photo.display,
             testimonial: photo.testimonial,
             testimonialRank: photo.testimonialRank,
             quoteName: photo.nameOfQuotePerson,
@@ -181,7 +178,7 @@ export default Route.extend({
   host: "https://fairrentnyc.com",
   image: "/s/img/fairrentnyc-og-image-10.jpg",
 
-  headTags: Ember.computed("title", function () {
+  headTags: computed("title", function () {
     let tags = [];
     tags.push({
       type: "title",

@@ -12,13 +12,15 @@
   },
   "scripts": {
     "install": "node scripts/fetch-council-districts.js",
-    "build": "ember fastboot:build --environment=production",
+    "build": "ember build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "node fastboot-server.js",
     "test": "ember test",
     "start:dev": "ember serve",
-    "build:browser": "ember build --environment=production"
+    "build:browser": "ember build --environment=production",
+    "lint": "npm run lint:js && npm run lint:hbs",
+    "test:fastboot-smoke": "./scripts/ci-fastboot-smoke.sh"
   },
   "devDependencies": {
     "@ember/jquery": "^0.6.0",
@@ -55,7 +57,6 @@
     "ember-leaflet": "^4.0.2",
     "ember-load-initializers": "^2.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-oil-pastels": "https://codeload.github.com/openhouse/ember-oil-pastels/tar.gz/94e2199",
     "ember-qunit": "^4.4.1",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.12.0",
@@ -66,7 +67,6 @@
     "eslint-plugin-n": "^17.21.0",
     "leaflet": "^1.6.0",
     "loader.js": "^4.7.0",
-    "napa": "^3.0.0",
     "qunit-dom": "^0.8.4",
     "sass": "^1.23.7",
     "toastr": "^2.1.4",

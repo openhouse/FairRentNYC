@@ -2,7 +2,6 @@ import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { sort, filterBy } from '@ember/object/computed';
-import { isPresent } from '@ember/utils';
 
 function mod(n, m) {
   return ((n % m) + m) % m;
@@ -125,7 +124,6 @@ export default Component.extend({
 
   actions: {
     initMap(event) {
-      let map = event.target;
       this.set('map', event.target);
     },
 

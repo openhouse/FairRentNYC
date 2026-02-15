@@ -32,7 +32,6 @@ export default Model.extend({
   borough: attr(),
   neighborhood: attr(),
   cssY: attr(),
-  display: attr(),
   testimonial: attr(),
   testimonialRank: attr(),
   quoteName: attr(),
