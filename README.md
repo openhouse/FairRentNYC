@@ -9,7 +9,7 @@ You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
-  * This project is pinned to Node `12.18.2` via `.nvmrc`.
+  * This project is pinned to Node `20.11.1` via `.nvmrc`.
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 * [Watchman](https://facebook.github.io/watchman/) (recommended for reliable file watching)
@@ -18,13 +18,13 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * `cd fairrentnyc`
-* `nvm use` (or install Node `12.18.2` manually)
-* `npm install`
+* `nvm install && nvm use` (or install Node `20.11.1` manually)
+* `npm ci` (preferred for deterministic installs)
   * This runs `scripts/fetch-council-districts.js`, which clones
     `https://github.com/NewYorkCityCouncil/districts` into
     `node_modules/council-districts` using HTTPS (avoids blocked `git://`).
-  * If you see Python/node-gyp errors for `fsevents`, they are optional. You can
-    skip optional deps with `npm install --no-optional`.
+  * If you see optional dependency build errors on local machines, retry with
+    `npm ci --omit=optional`.
 
 ## Running / Development
 
@@ -70,7 +70,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 ### Building
 
 * `ember build` (development)
-* `ember build --environment production` (production)
+* `npm run build:browser` (production browser-only output)
+* `npm run build` (production FastBoot SSR output via `ember fastboot:build`)
 * `npm start` (run FastBoot server from built `dist/`)
 
 ### Deploying (Dokku)
