@@ -15,6 +15,15 @@ module.exports = {
     browser: true
   },
   rules: {
+    'ember/avoid-leaking-state-in-ember-objects': 'off',
+    'ember/no-actions-hash': 'off',
+    'ember/no-classic-classes': 'off',
+    'ember/no-classic-components': 'off',
+    'ember/no-get': 'off',
+    'ember/no-observers': 'off',
+    'ember/require-computed-property-dependencies': 'off',
+    'ember/require-tagless-components': 'off',
+    'ember/use-ember-data-rfc-395-imports': 'off'
   },
   overrides: [
     // node files
@@ -27,7 +36,10 @@ module.exports = {
         'blueprints/*/index.js',
         'config/**/*.js',
         'lib/*/index.js',
-        'server/**/*.js'
+        'server/**/*.js',
+        'fastboot-server.js',
+        'ingest-council-members.js',
+        'scripts/**/*.js'
       ],
       parserOptions: {
         sourceType: 'script'
@@ -36,14 +48,15 @@ module.exports = {
         browser: false,
         node: true
       },
-      plugins: ['node'],
-      rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
+      plugins: ['n'],
+      extends: ['plugin:n/recommended'],
+      rules: {
         // add your custom rules and overrides for node files here
 
         // this can be removed once the following is fixed
         // https://github.com/mysticatea/eslint-plugin-node/issues/77
-        'node/no-unpublished-require': 'off'
-      })
+        'n/no-unpublished-require': 'off'
+      }
     }
   ]
 };
