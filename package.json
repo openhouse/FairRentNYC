@@ -60,6 +60,7 @@
     "ember-qunit": "^4.4.1",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.12.0",
+    "ember-template-lint": "^5.13.0",
     "ember-toastr": "^2.0.1",
     "ember-welcome-page": "^4.0.0",
     "eslint": "^8.57.1",
@@ -69,16 +70,19 @@
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.4",
     "sass": "^1.23.7",
-    "toastr": "^2.1.4",
-    "ember-template-lint": "^5.13.0"
+    "toastr": "^2.1.4"
   },
   "engines": {
     "node": "20.x",
     "npm": ">=10"
   },
   "dependencies": {
+    "abortcontroller-polyfill": "^1.7.8",
     "fastboot-app-server": "^4.1.4"
   },
+  "fastbootDependencies": [
+    "abortcontroller-polyfill"
+  ],
   "packageManager": "npm@10",
   "overrides": {
     "json-stable-stringify": "1.0.2"

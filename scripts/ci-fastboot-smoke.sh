@@ -4,6 +4,7 @@ set -euo pipefail
 PORT="${PORT:-3100}"
 
 npm run build
+npm prune --omit=dev
 
 PORT="$PORT" npm start > /tmp/fairrentnyc-fastboot.log 2>&1 &
 SERVER_PID=$!
@@ -19,6 +20,13 @@ for _ in {1..30}; do
   fi
   sleep 1
 done
+
+if ! kill -0 "$SERVER_PID" >/dev/null 2>&1; then
+  echo "FastBoot smoke test failed: server exited before responding."
+  echo "--- Server log ---"
+  cat /tmp/fairrentnyc-fastboot.log
+  exit 1
+fi
 
 if ! grep -qi "commercial rent stabilization" /tmp/fairrentnyc-fastboot-response.html; then
   echo "FastBoot smoke test failed: expected SSR marker not found."
