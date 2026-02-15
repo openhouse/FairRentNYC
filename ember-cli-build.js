@@ -5,6 +5,9 @@ const Funnel = require('broccoli-funnel');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+    'ember-fetch': {
+      preferNative: true,
+    },
     'ember-bootstrap': {
       bootstrapVersion: 4,
       importBootstrapFont: false,
