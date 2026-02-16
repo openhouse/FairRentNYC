@@ -83,7 +83,8 @@
   },
   "fastbootDependencies": [
     "abortcontroller-polyfill",
-    "node-fetch"
+    "node-fetch",
+    "crypto"
   ],
   "packageManager": "npm@10",
   "overrides": {
