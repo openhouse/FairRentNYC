@@ -5,6 +5,11 @@ const Funnel = require('broccoli-funnel');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+    babel: {
+      plugins: [
+        require('./babel-plugins/strip-relative-js-extension'),
+      ],
+    },
     'ember-fetch': {
       preferNative: true,
     },
