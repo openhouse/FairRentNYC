@@ -71,7 +71,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `npm run build:browser` (production browser-only output)
-* `npm run build` (production FastBoot SSR output via `ember fastboot:build`)
+* `npm run build` (production build used by FastBoot server)
 * `npm start` (run FastBoot server from built `dist/`)
 
 ### Deploying (Dokku)
@@ -84,7 +84,7 @@ for SEO + social crawlers.
 ```
 dokku apps:create fairrent-staging
 dokku buildpacks:set fairrent-staging https://github.com/heroku/heroku-buildpack-nodejs.git
-dokku config:set fairrent-staging NODE_ENV=production \
+dokku config:set fairrent-staging NODE_ENV=production NPM_CONFIG_PRODUCTION=false \
   MAILCHIMP_ACTION_URL=... MAILCHIMP_U=... MAILCHIMP_ID=... EVENT_RSVP_URL=...
 ```
 
@@ -102,7 +102,7 @@ dokku logs -t fairrent-staging
 ```
 
 Repeat the same steps for production (swap app name + config values). The
-runtime process is `npm start`, which launches `fastboot-server.js`.
+runtime process is `npm start`, which launches `fastboot-server.js` via `Procfile` (`web: npm start`). Builds run through `heroku-postbuild`, which executes `npm run build` and then prunes dev dependencies.
 
 ## Further Reading / Useful Links
 
