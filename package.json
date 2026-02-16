@@ -20,7 +20,8 @@
     "start:dev": "ember serve",
     "build:browser": "ember build --environment=production",
     "lint": "npm run lint:js && npm run lint:hbs",
-    "test:fastboot-smoke": "./scripts/ci-fastboot-smoke.sh"
+    "test:fastboot-smoke": "./scripts/ci-fastboot-smoke.sh",
+    "heroku-postbuild": "npm run build && npm prune --omit=dev"
   },
   "devDependencies": {
     "@ember/jquery": "^0.6.0",
@@ -79,7 +80,7 @@
     "abortcontroller-polyfill": "^1.7.8",
     "fastboot-app-server": "^4.1.4",
     "node-fetch": "^2.7.0",
-    "@babel/runtime": "7.28.6"
+    "@babel/runtime": "7.17.9"
   },
   "fastbootDependencies": [
     "abortcontroller-polyfill",
@@ -88,7 +89,6 @@
   ],
   "packageManager": "npm@10",
   "overrides": {
-    "json-stable-stringify": "1.0.2",
-    "@babel/runtime": "7.28.6"
+    "json-stable-stringify": "1.0.2"
   }
 }
