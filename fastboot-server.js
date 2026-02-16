@@ -63,6 +63,10 @@ let server = new FastBootAppServer({
   port: process.env.PORT || 3000,
   beforeMiddleware(app) {
     app.use((req, res, next) => {
+      if (process.env.LOG_FASTBOOT_HOST === 'true') {
+        console.info('[fastboot-host]', req.headers.host || '(missing host header)');
+      }
+
       const method = req.method || '';
       const accept = req.headers.accept || '';
       const pathname = req.path || '/';
