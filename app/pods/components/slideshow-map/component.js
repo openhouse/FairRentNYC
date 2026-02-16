@@ -11,6 +11,7 @@ export default Component.extend({
   // SERVICES
   timepiece: service('timepiece'),
   notifications: service('toast'),
+  fastboot: service(),
 
   // PROPERTIES
   photos: null,
@@ -82,8 +83,17 @@ export default Component.extend({
   }),
 
   moveMap: observer('photo.id', function () {
+    if (this.get('fastboot.isFastBoot')) {
+      return;
+    }
+
     let photo = this.get('photo');
     let map = this.get('map');
+
+    if (!photo || !map || typeof map.flyTo !== 'function') {
+      return;
+    }
+
     let zoom = this.get('zoom');
     let transitionSeconds = this.get('transitionSeconds');
     map.flyTo([photo.get('y'), photo.get('x')], zoom, {
