@@ -5,9 +5,6 @@ const Funnel = require('broccoli-funnel');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
-    babel: {
-      useBabelRuntime: false,
-    },
     'ember-fetch': {
       preferNative: true,
     },
