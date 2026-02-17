@@ -9,7 +9,7 @@ You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
-  * This project is pinned to Node `20.11.1` via `.nvmrc`.
+  * This project targets Node `20.x` via `.nvmrc`.
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 * [Watchman](https://facebook.github.io/watchman/) (recommended for reliable file watching)
@@ -18,11 +18,10 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * `cd fairrentnyc`
-* `nvm install && nvm use` (or install Node `20.11.1` manually)
+* `nvm install && nvm use` (or install a Node `20.x` release manually)
 * `npm ci` (preferred for deterministic installs)
-  * This runs `scripts/fetch-council-districts.js`, which clones
-    `https://github.com/NewYorkCityCouncil/districts` into
-    `node_modules/council-districts` using HTTPS (avoids blocked `git://`).
+  * This runs `scripts/fetch-council-districts.js`, which downloads a pinned
+    GitHub tarball archive and installs it into `node_modules/council-districts`.
   * If you see optional dependency build errors on local machines, retry with
     `npm ci --omit=optional`.
 
@@ -73,6 +72,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `npm run build:browser` (production browser-only output)
 * `npm run build` (production FastBoot SSR output via `ember fastboot:build`)
 * `npm start` (run FastBoot server from built `dist/`)
+* SSR verification: `npm run test:fastboot-smoke` (build -> prune -> start -> curl -> assert)
 
 ### Deploying (Dokku)
 
@@ -103,6 +103,10 @@ dokku logs -t fairrent-staging
 
 Repeat the same steps for production (swap app name + config values). The
 runtime process is `npm start`, which launches `fastboot-server.js`.
+Ember builds require `devDependencies` at build time, and runtime must still work
+after pruning `devDependencies`. Keep runtime modules in `dependencies` (and
+FastBoot sandbox-only runtime modules in `fastbootDependencies`).
+
 
 ## Further Reading / Useful Links
 

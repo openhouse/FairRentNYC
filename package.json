@@ -12,7 +12,7 @@
   },
   "scripts": {
     "install": "node scripts/fetch-council-districts.js",
-    "build": "ember build --environment=production",
+    "build": "ember fastboot:build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "node fastboot-server.js",
