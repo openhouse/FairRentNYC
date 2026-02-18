@@ -1,6 +1,7 @@
 'use strict';
 
 const FastBootAppServer = require('fastboot-app-server');
+const fastbootConfig = require('./config/fastboot')(process.env.NODE_ENV || 'production');
 
 const EMBER_TOP_LEVEL = new Set([
   '',
@@ -59,6 +60,7 @@ function looksLikeLegacyGhostPost(pathname) {
 }
 
 let server = new FastBootAppServer({
+  ...fastbootConfig,
   distPath: 'dist',
   port: process.env.PORT || 3000,
   beforeMiddleware(app) {
